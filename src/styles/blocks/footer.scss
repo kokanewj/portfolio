@@ -1,0 +1,79 @@
+.footer {
+    background: #232733;
+    color: #fff;
+    padding: 75px 0;
+    line-height: 1.8;
+    
+    &__authorship {
+      display: flex;
+      width: 35%;
+    }
+    
+    &__authorship_information {
+      width: 40%;
+      padding-top: 15px;
+    }
+    
+    &__authorship_name {
+      color: #fff;
+      font-size: 18px;
+      text-transform: uppercase;
+      font-weight: bold;
+      margin-bottom: 34px;
+      margin-bottom: 23px;
+    }
+
+    &__authorship_text {
+      color: #fff;
+      opacity: .2;
+    }
+
+    &__authorship_trademark {
+      flex: 0.9;
+    }
+    
+    &__authorship_year {
+      color: #fff;
+      opacity: .2;
+      font-size: 48px;
+      font-weight: 700;
+    }
+
+    &__container {
+      display: flex;
+      justify-content: space-between;
+    }
+    
+    &__information {
+      width: 65%;
+      padding-top: 15px;
+    }
+    
+    &__information_details {
+      display: flex;
+      justify-content: space-between;
+    }
+    
+    &__information_left {
+      width: 45%;
+    }  
+    &__information_right {
+      width: 45%;
+    }  
+    
+    &__information_text {
+      color: #fff;
+      opacity: .2;
+      margin-bottom: 40px;
+    }
+
+    &__menu {
+      margin-bottom: 60px;
+  
+      .menu__list {
+        justify-content: flex-start;
+      }
+    }
+  }
+  
+  

@@ -1,0 +1,22 @@
+.me__avatar {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-bottom: 40px;
+}
+
+.me__table {
+  font-size:16px;
+  font-weight: 600;
+  width: 100%;
+
+  &_name {
+  font-weight: 600;
+  opacity: .5;
+  }
+
+  td {
+    padding-bottom: 15px;
+  }
+}

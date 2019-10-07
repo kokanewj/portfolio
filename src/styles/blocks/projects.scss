@@ -1,0 +1,105 @@
+.projects {
+  &:before {
+    content: "4";
+    display: block;
+    position: absolute;
+    font-size: 350px;
+    opacity: .3;
+    left: 58%;
+    top: 52%;
+}
+
+  &__title {
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 70px;
+  }
+}
+
+.projects-slider {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    
+    &__button {
+      width: 50px;
+      height: 50px;
+      background: #2f3e50;
+      display: block;
+      position: relative;
+      &:before {
+        content: "";
+        display: block;
+        background: url('/src/images/icons/arrow-down.png') center center/ contain no-repeat;
+        position: absolute;
+        height: 10px;
+        width: 10px;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) rotate(-360deg);
+        opacity: .3;
+      }
+      &:hover {
+        &:before {
+          opacity: 1;
+        }
+      }
+      &_prev {
+        &:before {
+          transform: translate(-50%, -50%) rotate(-180deg);
+        }
+      }
+    }
+
+    &__buttons {
+      position: absolute;
+      display: flex;
+      top: 69%;
+      right: 0;
+    }
+    
+    &__content {
+      width: 26%;
+    }
+
+    &__message {
+      font-weight: 600;
+      opacity: .5;
+      line-height: 1.5;
+      margin-bottom:20px;
+    }
+    
+    &__slides {
+      width: 65%;
+      position: relative;
+      height: 550px;
+    }
+    
+    &__text {
+      font-size:26px;
+      font-weight: 600;
+      margin-bottom: 35px;
+    }    
+  }
+
+
+  .website-link {
+    font-size: 18px;
+    font-weight: bold;
+    color: #2d75cc;
+    display: inline-flex;
+    align-items: center;
+
+  
+    &:before {
+      content: "";
+      display: block;
+      width: 15px;
+      height: 15px;
+      background-color: #2d75cc;
+      -webkit-mask-image: url("/src/images/icons/link.svg") ;
+      mask-image: url("/src/images/icons/link.svg");
+      margin-right: 22px;
+    }
+  }
+  

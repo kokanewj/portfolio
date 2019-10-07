@@ -1,0 +1,26 @@
+.testimonial {
+    position: relative;
+    padding-left: 25%;
+  
+    &:before {
+      content: "";
+      display: block;
+      height: 30%;
+      width: 15%;
+      opacity: .1;
+      position: absolute;
+      top: 0;
+      left: 0;
+      background: url('/src/images/icons/quote.svg') center/ contain no-repeat;
+  
+    }
+
+    &__text {
+      margin-bottom: 30px;
+      color: $text-color;
+      font-weight: 600;
+      line-height: 1.8;
+      opacity: .5;
+    }
+  }
+  

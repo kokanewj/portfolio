@@ -1,15 +1,197 @@
-include ./mixins.pug
-
 <!DOCTYPE html>
-html(lang="en")
+html(lang="ru")
   head
     meta(charset="UTF-8")
     meta(name="viewport", content="width=device-width, initial-scale=1.0")
     meta(http-equiv="X-UA-Compatible", content="ie=edge")
-    title Portfolio | main page
+    title Мое портфолио
+    link(rel="stylesheet" href="/src/styles/main.css")
   body
     .wrapper
       .maincontent
-        +image('content/user.jpg', 'user-pic')
-        +icon('link', 'link-class')
-        .icon-bg
+        .main-block
+          section.profile
+            .container.profile__container
+              header.header
+                .header__logo
+                  a.logo ВА
+                .header__menu 
+                  nav.menu
+                    ul.menu__list
+                      - var links = ['Главная', "Обо мне", "Навыки", "Работы", "Отзывы", "Связаться"];
+                      each item in links 
+                        li.menu__item
+                          a(href="#").menu__link #{item}
+                .header__socials
+                  ul.socials
+                    each social in ['instagram', 'vk', 'github']
+                      li.socials__item
+                        a(class=`socials__link` href="#")
+                          img.socials__icon(src=`../src/images/icons/${social}-social.png`, alt="Соцсети")
+
+              .profile__welcome
+                .profile_welcome__text 
+                 p Личный сайт 
+                 p веб-разработчика
+                .profile_welcome__username Куаныш Ерсаханов
+              .profile__button
+                .scroll__button Скролл
+                  
+          section.info
+            .container
+              .info__block
+                .info__me
+                  .me
+                    .me__avatar
+                      img(src="../src/images/content/me.jpg", alt="Куаныш")
+                    .me__details
+                      - 
+                        var details = [
+                          ['Проживаю:', "г. Нур-Султан"], ['Возраст:', "24 года"],['Родился:', "8 декабря 1994"],
+                        ];
+                      table.me__table
+                        each item in details
+                          tr
+                            td.me__table_name #{item[0]}
+                            td.me__table_information #{item[1]}
+                .info__me_text
+                  .info__me_content
+                    .info__hello Привет, меня зовут
+                    .info__name Куаныш Ерсаханов
+                    .info__text
+                      p Я занимаюсь разработкой современных сайтов и приложений. Мне нравится делать интересные и современные проекты.
+                  .info__additional
+                    p Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
+        .second-block 
+          section.achievements
+            .container.achievements__container
+              .achievements__wrapper
+                .achievements__text
+                    .achievements__welcome Чем я могу быть полезен вам
+                    .achievements__message
+                      p Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
+                .achievements__skills
+                  .achievements__skills-container            
+                    ul.field
+                      each field in ['Frontend', 'Workflow'] 
+                        li.field__list
+                           div.field__item
+                            .field__item-name #{field}
+                    ul.skill
+                      each skill in ['HTML5','CSS3','Javascript', 'Jquery','GIT','Terminal','Gulp','Webpack']
+                        li.skill__list
+                          div.skill__item
+                            .skill__item-name #{skill}     
+          section.projects
+            .container.projects__container
+              .projects__title Мои работы
+              .projects__content
+                .projects-slider
+                  .projects-slider__slides
+                    .projects-slider__main_slider
+                      img(src=`../src/images/slider/burger.jpg`, alt='Слайдер')
+                    .projects-slider__buttons
+                      .projects-slider__button.projects-slider__button_next
+                      .projects-slider__button.projects-slider__button_prev
+                  .projects-slider__content
+                    ul.links
+                      - var links__item = ["HTML", "CSS", "Javascript"];
+                      each link in links__item 
+                        li.links-item
+                          .link #{link}
+                    .projects-slider__text Сайт школы образования
+                    .projects-slider__message
+                      p Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 2 месяца только самых тяжелых испытаний и бессонных ночей!
+                    .projects-slider__website-link
+                      .website-link Посмотреть сайт
+        
+          section.feedback
+            .container.feedback__container
+              .feedback__about
+                .reviews
+                  .reviews__header
+                    .reviews__title Что обо мне говорят
+                    .reviews__buttons
+                      button(type="button").reviews__button.reviews__button_prev
+                      button(type="button").reviews__button.reviews__button_next
+                  .reviews__content
+                    ul.reviews__content-wrapper
+                        li.reviews__content-item
+                          .testimonial
+                            .testimonial__text
+                              p Этот парень проходил обучение веб-разработке не где-то, а в Loftschool! 4,5 месяца только самых тяжелых испытаний и бессонных ночей!
+                            .testimonial__author
+                              .loftschool-review
+                                .loftschool-review__avatar
+                                  .loftschool-review__photo
+                                    img(src="/src/images/content/feedback-1.png", alt="Ковальчук")
+                                .loftschool-review__information
+                                  .loftschool-review__name Ковальчук Дмитрий
+                                  .loftschool-review__position Основатель Loftschool
+                        li.reviews__content-item
+                          .testimonial
+                            .testimonial__text
+                              p Этот код выдержит любые испытания. Только пожалуйста, не загружайте сайт на слишком старых браузерах
+                            .testimonial__author
+                              .loftschool-review
+                                .loftschool-review__avatar
+                                  .loftschool-review__photo
+                                    img(src="/src/images/content/feedback-2.png", alt="Сабанцев")
+                                .loftschool-review__information
+                                  .loftschool-review__name Владимир Сабанцев
+                                  .loftschool-review__position Преподаватель
+
+              .feedback__form
+                  .feedback__title Связаться со мной
+                  form.form__card
+                    .form__row
+                      label.form__field Введите ваше имя
+                        .form__field__container
+                          img.form__field__icon(src=`../src/images/icons/user.svg`, alt="Профиль")                         
+                          .form__field__text
+                            input.form__field__input(type="text" placeholder="Ерсаханов Куаныш")
+                      label.form__field Введите ваш email
+                        .form__field__container
+                          img.form__field__icon(src=`../src/images/icons/envelope.svg`, alt="Конверт")
+                          .form__field__text
+                            input.form__field__input(type="text" placeholder="kokanewj@gmail.com")
+                    .form__row
+                      label.form__field Сообщение к письму
+                        .form__field__container
+                          img.form__field__icon(src=`../src/images/icons/message.svg`, alt="Диалог")
+                          .form__field__text
+                            input.form__field__input(type="text" placeholder="Требуется ваша помощь в создании сайта. Интересуют сроки и цена вопроса")
+                    .form__row
+                      input(type="submit" value="ОТПРАВИТЬ").form-button
+
+      footer.footer
+        .container.footer__container
+          .footer__authorship
+            .footer__authorship_trademark
+              .footer__authorship_year &copy; 2019
+            .footer__authorship_information
+              .footer__authorship_name Куаныш Ерсаханов
+              .footer__authorship_text Личный сайт веб-разработчика
+          .footer__information
+            nav.menu.footer__menu
+              ul.menu__list
+                each item in links 
+                  li.menu__item
+                    a(href="#").menu__link #{item}
+            .footer__information_details
+              .footer__information_left
+                .footer__information_text
+                  p Этот сайт я сделал в рамках обучения в Школе онлайн образования Loftschool
+                .footer__information_socials
+                  ul.socials.socials__circles
+                   ul.socials
+                    each social in ['instagram', 'vk', 'github']
+                      li.socials__item
+                        a(class=`socials__link` href="#")
+                          img.socials__icon(src=`../src/images/icons/${social}-social.png`, alt="Соцсеть")
+
+              .footer__information_right
+                .proverb
+                  .proverb__message
+                    p Всегда пишите код так, будто сопровождать его будет склонный к насилию психопат, который знает где вы живете 
+                  .proverb__author Martin Golding

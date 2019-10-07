@@ -1,0 +1,19 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 135px;
+
+    &__logo {
+      width: 10%;
+    }
+
+    &__menu {
+      width: 60%;
+    }
+
+    &__socials {
+      width: 20%;
+    }
+  }
+  

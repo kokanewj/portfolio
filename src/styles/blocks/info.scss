@@ -1,0 +1,45 @@
+.info {
+    position: relative;
+
+    &__additional {
+      font-style: italic;
+      opacity: .5;
+      margin-bottom: 40px;
+    }
+
+    &__block {
+      display: flex;
+      justify-content: space-between;
+      padding: 170px 250px 270px;
+    }
+
+    &__hello {
+      font-weight: 700;
+      opacity: .5;
+      margin-bottom: 15px;
+    }
+
+    &__me_text {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      color: $text-color;
+      width: 55%;
+    }
+
+    &__name {
+      font-size: 36px;
+      font-weight: 700;
+      margin-bottom: 35px;
+      color: $text-color;
+    }
+
+    &__text {
+      font-weight: 600;
+      opacity: .5;
+    }
+  }
+    
+
+
+ 

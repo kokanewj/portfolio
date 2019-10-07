@@ -1,0 +1,53 @@
+.reviews{
+  &__buttons {
+    display: flex;
+  }
+  
+  &__button {
+    position: relative;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 1px solid $text-color;
+    margin-right: 25px;
+    outline: none;
+    &:before {
+      content: "";
+      display: block;
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      background: url('/src/images/icons/arrow-down.svg') center/ contain no-repeat;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+    &_prev {
+      &:before {
+        transform: translate(-50%, -50%) rotate(-180deg);
+      }
+    }
+  }
+
+  &__header {
+    display: flex;
+    margin-bottom: 90px;
+  }
+  
+  &__title {
+    font-size:36px;
+    font-weight: 600;
+    margin-bottom: 0;
+    margin-right: 30px;
+  }
+  
+  &__content-wrapper {
+    display: flex;
+    align-items: flex-start;
+  }
+  
+  &__content-item {
+    padding-right: 20px;
+  }  
+}
+

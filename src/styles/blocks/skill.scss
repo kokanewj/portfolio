@@ -1,0 +1,25 @@
+.skill {
+  display: flex;
+  flex-wrap: wrap;
+
+  &__item { 
+    position: relative;
+    width: 170px;
+    height: 170px;
+    font-weight: 600;
+    // opacity: .5;
+    &:before {
+      content: "";
+      position: absolute;
+      background: url('/src/images/content/ellipse.png') left  / contain no-repeat;
+      display: block;
+      height: 100%;
+      bottom: 42%;
+      width: 100%;
+      left: -34%;
+      z-index: 20;
+    }
+  }
+
+}
+

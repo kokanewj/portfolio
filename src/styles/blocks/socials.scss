@@ -1,0 +1,33 @@
+.socials {
+    display: flex;
+    
+    &__circles {
+      .socials__item {
+        border: 1px solid $text-color;
+        border-radius: 50px;
+        margin-right: 15px;
+        width: 50px;
+        height: 50px;
+      }
+      .socials__link {
+        display: block;
+        position: relative;
+        width: 100%;
+        height: 100%;
+      }
+      .socials__icon {
+        position: absolute;
+        width: 20px;
+        height: 16px;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+    }
+  }
+  
+  .socials__item {
+    margin-right: 40px;
+    align-self: center;
+  }
+  

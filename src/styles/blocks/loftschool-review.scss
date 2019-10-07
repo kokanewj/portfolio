@@ -1,0 +1,28 @@
+.loftschool-review {
+    display: flex;
+
+    &__avatar {
+      margin-right: 25px;
+    }
+
+    &__name {
+      font-size: 16px;
+      font-weight: bold;
+      margin-bottom: 15px;
+    }
+    
+    &__photo {
+      width: 75px;
+      height: 75px;
+      border-radius: 50%;
+      overflow: hidden;
+    }
+    
+    &__position {
+      color: $text-color;
+      opacity: 0.5;
+      font-weight: 600;
+    }    
+  }
+  
+ 

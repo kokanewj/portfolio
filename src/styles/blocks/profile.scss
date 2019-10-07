@@ -1,0 +1,61 @@
+.profile {
+    position: relative;
+    padding-top: 55px;
+
+    &__container {
+      display: flex;
+      flex-direction: column;
+    }
+
+    &__button {
+      position: absolute;
+      display: flex;
+      justify-content: center;
+      left: 0;
+      right: 0;
+      bottom: 5%;
+    }
+
+    &__welcome {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      padding: 0 250px;
+      margin-bottom: 40%;
+    }
+
+    &_welcome__text {
+      font-size: 18px;
+      text-align: center;
+      opacity:.4;
+      font-weight: 600;
+      margin-bottom: 20px;
+    }
+
+    &_welcome__username {
+      font-size: 72px;
+      font-weight: 800;
+      text-align: center;
+      line-height: 0.9;
+    }
+  }
+
+  .scroll__button {
+    display: flex;
+    font-size: 18px;
+    font-weight: 600;
+  
+    &:after {
+      content: "";
+      display: block;
+      width: 30px;
+      height: 30px;
+      background: url('/src/images/content/scroll.png') center / contain no-repeat;
+      margin-left: 20px;
+    }
+  
+  }
+  
+ 
+  

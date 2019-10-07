@@ -1,0 +1,18 @@
+.links {
+  display: flex;
+  flex-wrap: wrap;
+
+  &-item {
+    font-size: 14px;
+    font-weight: 600;
+    color: $text-color;
+    border-radius: 50px;
+    margin-left: 10px;
+    margin-bottom: 20px;
+    background: #fff;
+    padding: 15px 20px;
+  }
+  &-item:first-child {
+    margin-left: 0;
+  }
+}

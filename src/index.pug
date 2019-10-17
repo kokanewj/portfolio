@@ -27,7 +27,7 @@ html(lang="ru")
                     each social in ['insta', 'vk', 'github']
                       li.socials__item
                         a(class=`socials__link` href="#")
-                          img.socials__icon(src=`../images/icons/${social}.svg`, alt="Соцсети")
+                          img.socials__icon(src=`../src/images/icons/${social}.svg`, alt="Соцсети")
 
               .profile__welcome
                 .profile_welcome__text 
@@ -43,7 +43,7 @@ html(lang="ru")
                 .info__me
                   .me
                     .me__avatar
-                      img(src="../images/content/me.jpg", alt="Куаныш")
+                      img(src="../src/images/content/me.jpg", alt="Куаныш")
                     .me__details
                       - 
                         var details = [
@@ -106,7 +106,7 @@ html(lang="ru")
                 .projects-slider
                   .projects-slider__slides(data-slide="4")
                     .projects-slider__slide
-                      img.projects-slider__main(src=`../images/slider/Burger.jpg`, alt='Slider')
+                      img.projects-slider__main(src=`../src/images/slider/Burger.jpg`, alt='Slider')
                     .projects-slider__buttons
                       a(href="#").projects-slider__button.projects-slider__button_next
                       a(href="#").projects-slider__button.projects-slider__button_prev
@@ -115,7 +115,7 @@ html(lang="ru")
                       each slide in slide__item 
                         li.projects-slider__others-item
                           a.projects-slider__others-link
-                            img.projects-slider__others(src=`../images/slider/Burger.jpg`, alt='Превью')
+                            img.projects-slider__others(src=`../src/images/slider/Burger.jpg`, alt='Превью')
                   .projects-slider__content
                     ul.links
                       - var links__item = ["HTML", "CSS", "Javascript"];
@@ -152,7 +152,7 @@ html(lang="ru")
                               .loftschool-review
                                 .loftschool-review__avatar
                                   .loftschool-review__photo
-                                    img(src="../images/content/feedback-1.png", alt="Ковальчук")
+                                    img(src="../src/images/content/feedback-1.png", alt="Ковальчук")
                                 .loftschool-review__information
                                   .loftschool-review__name Ковальчук Дмитрий
                                   .loftschool-review__position Основатель Loftschool
@@ -164,7 +164,7 @@ html(lang="ru")
                               .loftschool-review
                                 .loftschool-review__avatar
                                   .loftschool-review__photo
-                                    img(src="../images/content/feedback-2.png", alt="Сабанцев")
+                                    img(src="../src/images/content/feedback-2.png", alt="Сабанцев")
                                 .loftschool-review__information
                                   .loftschool-review__name Владимир Сабанцев
                                   .loftschool-review__position Преподаватель
@@ -175,18 +175,18 @@ html(lang="ru")
                     .form__row
                       label.form__field Введите ваше имя
                         .form__field__container
-                          img.form__field__icon(src=`../images/icons/user.svg`, alt="Профиль")                         
+                          img.form__field__icon(src=`../src/images/icons/user.svg`, alt="Профиль")                         
                           .form__field__text
                             input.form__field__input(type="text" placeholder="Ерсаханов Куаныш")
                       label.form__field Введите ваш email
                         .form__field__container
-                          img.form__field__icon(src=`../images/icons/envelope.svg`, alt="Конверт")
+                          img.form__field__icon(src=`../src/images/icons/envelope.svg`, alt="Конверт")
                           .form__field__text
                             input.form__field__input(type="text" placeholder="kokanewj@gmail.com")
                     .form__row
                       label.form__field Сообщение к письму
                         .form__field__container
-                          img.form__field__icon(src=`../images/icons/message.svg`, alt="Диалог")
+                          img.form__field__icon(src=`../src/images/icons/message.svg`, alt="Диалог")
                           .form__field__text
                             input.form__field__input(type="text" placeholder="Требуется ваша помощь в создании сайта. Интересуют сроки и цена вопроса")
                     .form__row
@@ -216,7 +216,7 @@ html(lang="ru")
                     each social in ['insta', 'vk', 'github']
                       li.socials__item
                         a(class=`socials__link` href="#")
-                          img.socials__icon(src=`../images/icons/${social}.svg`, alt="Соцсеть")
+                          img.socials__icon(src=`../src/images/icons/${social}.svg`, alt="Соцсеть")
 
               .footer__information_right
                 .proverb

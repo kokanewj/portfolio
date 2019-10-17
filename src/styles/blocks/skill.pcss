@@ -1,0 +1,56 @@
+.skill {
+  position: relative;
+  width: 165px;
+  height: 165px;
+
+  &__circle {
+    fill: transparent;
+    &--position--under {
+      stroke: #ccc;
+      stroke-width: 5px;
+    }
+    &--position--above {
+      stroke-width: 10px;
+      stroke-dasharray: 170;
+      stroke-dashoffset: 100;
+    }
+  }
+
+  &__title {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    color: $text-color;
+    font-weight: 600;
+    transform: translate(-50%, -50%);
+    padding: 5px;
+  }
+}
+
+
+.user-skills__item {
+  margin-bottom: 35px;
+  &:last-child{
+      margin-bottom: 0;
+  }
+}
+
+.skills-row {
+  &__title {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 25px;
+  }
+  
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  &__item {
+  margin-right: 15px;
+  }
+}
+
+
+

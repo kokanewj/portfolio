@@ -22,6 +22,8 @@
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
+        filter: invert(95%) sepia(2%) saturate(11%) hue-rotate(343deg) brightness(89%) contrast(87%);
+        transition: .3s;
       }
     }
   }
@@ -29,5 +31,16 @@
   .socials__item {
     margin-right: 40px;
     align-self: center;
+  }
+
+  .socials__icon {
+    width: 25px;
+    height: 25px;
+    opacity:0.6;
+    &:hover {
+      filter: invert(9%) sepia(100%) saturate(6637%) hue-rotate(267deg) brightness(90%) contrast(127%);
+      transition: .3s;
+    }
+   
   }
   

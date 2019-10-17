@@ -3,7 +3,6 @@
     border-bottom: 1px solid $text-color;
     margin-right: 55px;
     font-weight: 600;
-    // opacity: .5;
 
     &__container {
       display: flex;
@@ -43,19 +42,24 @@
       resize:none;
     }
   }
+
   .form__row {
     display: flex;
     margin-bottom: 40px;
   }
   .form-button {
-    background: url('/src/images/content/button.png') center center/ contain no-repeat;
+    background-image: linear-gradient(to right, #ad00ed, #5500f2);
     padding: 23px 60px;
     border: none;
+    border-radius: 40px 5px;
     font-size: 16px;
     color: #fff;
     font-weight: bold;
     outline:none;
     cursor: pointer;
+    &:hover {
+      background-image: linear-gradient(to right, #5500f2, #ad00ed);
+    }
   }
   
   

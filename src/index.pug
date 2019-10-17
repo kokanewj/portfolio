@@ -14,7 +14,7 @@ html(lang="ru")
             .container.profile__container
               header.header
                 .header__logo
-                  a.logo ВА
+                  span.logo КЕ
                 .header__menu 
                   nav.menu
                     ul.menu__list
@@ -24,10 +24,10 @@ html(lang="ru")
                           a(href="#").menu__link #{item}
                 .header__socials
                   ul.socials
-                    each social in ['instagram', 'vk', 'github']
+                    each social in ['insta', 'vk', 'github']
                       li.socials__item
                         a(class=`socials__link` href="#")
-                          img.socials__icon(src=`../src/images/icons/${social}-social.png`, alt="Соцсети")
+                          img.socials__icon(src=`../src/images/icons/${social}.svg`, alt="Соцсети")
 
               .profile__welcome
                 .profile_welcome__text 
@@ -62,6 +62,11 @@ html(lang="ru")
                       p Я занимаюсь разработкой современных сайтов и приложений. Мне нравится делать интересные и современные проекты.
                   .info__additional
                     p Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
+        .triangles.triangles_above
+          svg(viewBox="0 0 1000 100" preserveAspectRatio="none").triangles__shape.triangles__shape_left
+            polygon(points="0,0 0,100 1000,100")
+          svg(viewBox="0 0 1000 100" preserveAspectRatio="none").triangles__shape.triangles__shape_right
+            polygon(points="0,100 1000,100 1000,0")        
         .second-block 
           section.achievements
             .container.achievements__container
@@ -71,28 +76,46 @@ html(lang="ru")
                     .achievements__message
                       p Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
                 .achievements__skills
-                  .achievements__skills-container            
-                    ul.field
-                      each field in ['Frontend', 'Workflow'] 
-                        li.field__list
-                           div.field__item
-                            .field__item-name #{field}
-                    ul.skill
-                      each skill in ['HTML5','CSS3','Javascript', 'Jquery','GIT','Terminal','Gulp','Webpack']
-                        li.skill__list
-                          div.skill__item
-                            .skill__item-name #{skill}     
+                  .achievements__skills-container
+                    ul.user-skills
+                      - 
+                        var skills = [
+                          ['Frontend', ['HTML5','CSS3','Javascript', 'Jquery и Vue.js']], 
+                          ['Workflow', ['GIT','Terminal','Gulp','Webpack']]
+                        ]
+                      each item in skills
+                        li.user-skills__item
+                           div.skills-row
+                            .skills-row__title #{item[0]}
+                            ul.skills-row__list
+                              each skill in item[1]
+                                li.skills-row__item
+                                  .skill
+                                      svg(viewBox="0 0 100 100").skill__shape
+                                        circle(cx="50" cy="50" r="40").skill__circle.skill__circle--position--under
+                                        circle(cx="50" cy="50" r="40" stroke="url(#gradient)" transform='rotate(180 50 50)').skill__circle.skill__circle--position--above       
+                                      .skill__title #{skill}
+                    svg
+                      linearGradient(id="gradient" x1="0%" y1="0%" x2="100%" y2="0")
+                        stop(offset="0%" stop-color="#5500f2")
+                        stop(offset="100%" stop-color="#ad00ed")                    
           section.projects
             .container.projects__container
               .projects__title Мои работы
               .projects__content
                 .projects-slider
-                  .projects-slider__slides
-                    .projects-slider__main_slider
-                      img(src=`../src/images/slider/burger.jpg`, alt='Слайдер')
+                  .projects-slider__slides(data-slide="4")
+                    .projects-slider__slide
+                      img.projects-slider__main(src=`../src/images/slider/Burger.jpg`, alt='Slider')
                     .projects-slider__buttons
-                      .projects-slider__button.projects-slider__button_next
-                      .projects-slider__button.projects-slider__button_prev
+                      a(href="#").projects-slider__button.projects-slider__button_next
+                      a(href="#").projects-slider__button.projects-slider__button_prev
+                    ul.projects-slider__other-slides
+                      - var slide__item = ["Burger.jpg", "Burger.jpg", "Burger.jpg"];
+                      each slide in slide__item 
+                        li.projects-slider__others-item
+                          a.projects-slider__others-link
+                            img.projects-slider__others(src=`../src/images/slider/Burger.jpg`, alt='Превью')
                   .projects-slider__content
                     ul.links
                       - var links__item = ["HTML", "CSS", "Javascript"];
@@ -104,7 +127,12 @@ html(lang="ru")
                       p Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 2 месяца только самых тяжелых испытаний и бессонных ночей!
                     .projects-slider__website-link
                       .website-link Посмотреть сайт
-        
+          .triangles.triangles_under
+            svg(viewBox="0 0 1000 100" preserveAspectRatio="none").triangles__shape.triangles__shape_left
+              polygon(points="0,0 1000,0 1000,100")
+            svg(viewBox="0 0 1000 100" preserveAspectRatio="none").triangles__shape.triangles__shape_right
+              polygon(points="0,0 0,100 1000,0")
+
           section.feedback
             .container.feedback__container
               .feedback__about
@@ -185,10 +213,10 @@ html(lang="ru")
                 .footer__information_socials
                   ul.socials.socials__circles
                    ul.socials
-                    each social in ['instagram', 'vk', 'github']
+                    each social in ['insta', 'vk', 'github']
                       li.socials__item
                         a(class=`socials__link` href="#")
-                          img.socials__icon(src=`../src/images/icons/${social}-social.png`, alt="Соцсеть")
+                          img.socials__icon(src=`../src/images/icons/${social}.svg`, alt="Соцсеть")
 
               .footer__information_right
                 .proverb

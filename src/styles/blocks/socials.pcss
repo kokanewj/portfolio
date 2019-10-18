@@ -8,6 +8,12 @@
         margin-right: 15px;
         width: 50px;
         height: 50px;
+        &:hover {
+        .socials__icon {
+          fill: #5500f2;
+          transition: .3s;
+        }
+      }
       }
       .socials__link {
         display: block;
@@ -18,12 +24,11 @@
       .socials__icon {
         position: absolute;
         width: 20px;
-        height: 16px;
+        height: 20px;
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
-        filter: invert(95%) sepia(2%) saturate(11%) hue-rotate(343deg) brightness(89%) contrast(87%);
-        transition: .3s;
+        fill:#fff;
       }
     }
   }
@@ -38,7 +43,7 @@
     height: 25px;
     opacity:0.6;
     &:hover {
-      filter: invert(9%) sepia(100%) saturate(6637%) hue-rotate(267deg) brightness(90%) contrast(127%);
+      fill: #5500f2;
       transition: .3s;
     }
    

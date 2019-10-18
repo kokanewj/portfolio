@@ -3,6 +3,16 @@
     border-bottom: 1px solid $text-color;
     margin-right: 55px;
     font-weight: 600;
+    cursor:pointer;
+
+    &:hover {
+    border-bottom: 1px solid #5500f2;
+        .form__field__icon {
+            fill: #5500f2;
+            transition:.3s;
+            opacity: 1;
+        }
+    }
 
     &__container {
       display: flex;
@@ -45,11 +55,11 @@
 
   .form__row {
     display: flex;
-    margin-bottom: 40px;
+    margin-bottom: 88px;
   }
   .form-button {
     background-image: linear-gradient(to right, #ad00ed, #5500f2);
-    padding: 23px 60px;
+    padding: 30px 120px;
     border: none;
     border-radius: 40px 5px;
     font-size: 16px;
@@ -57,9 +67,6 @@
     font-weight: bold;
     outline:none;
     cursor: pointer;
-    &:hover {
-      background-image: linear-gradient(to right, #5500f2, #ad00ed);
-    }
   }
   
   

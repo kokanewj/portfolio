@@ -1,3 +1,4 @@
+include ./mixins.pug
 <!DOCTYPE html>
 html(lang="ru")
   head
@@ -5,7 +6,6 @@ html(lang="ru")
     meta(name="viewport", content="width=device-width, initial-scale=1.0")
     meta(http-equiv="X-UA-Compatible", content="ie=edge")
     title Мое портфолио
-    link(rel="stylesheet" href="/src/styles/main.css")
   body
     .wrapper
       .maincontent
@@ -24,18 +24,18 @@ html(lang="ru")
                           a(href="#").menu__link #{item}
                 .header__socials
                   ul.socials
-                    each social in ['insta', 'vk', 'github']
+                    - var socials = ['insta', 'vk', 'github'];
+                    each item in socials
                       li.socials__item
-                        a(class=`socials__link` href="#")
-                          img.socials__icon(src=`../src/images/icons/${social}.svg`, alt="Соцсети")
-
+                        a(href="#").socials__link
+                          +icon(item, 'socials__icon')
               .profile__welcome
                 .profile_welcome__text 
                  p Личный сайт 
                  p веб-разработчика
                 .profile_welcome__username Куаныш Ерсаханов
               .profile__button
-                .scroll__button Скролл
+                a(href="").scroll__button Скролл
                   
           section.info
             .container
@@ -43,7 +43,7 @@ html(lang="ru")
                 .info__me
                   .me
                     .me__avatar
-                      img(src="../src/images/content/me.jpg", alt="Куаныш")
+                      +image('content/me.jpg')
                     .me__details
                       - 
                         var details = [
@@ -106,7 +106,7 @@ html(lang="ru")
                 .projects-slider
                   .projects-slider__slides(data-slide="4")
                     .projects-slider__slide
-                      img.projects-slider__main(src=`../src/images/slider/Burger.jpg`, alt='Slider')
+                      +image('slider/Burger.jpg', 'projects-slider__main', 'Slider')
                     .projects-slider__buttons
                       a(href="#").projects-slider__button.projects-slider__button_next
                       a(href="#").projects-slider__button.projects-slider__button_prev
@@ -115,7 +115,7 @@ html(lang="ru")
                       each slide in slide__item 
                         li.projects-slider__others-item
                           a.projects-slider__others-link
-                            img.projects-slider__others(src=`../src/images/slider/Burger.jpg`, alt='Превью')
+                            +image('slider/Burger.jpg', 'projects-slider__others', 'Превью')
                   .projects-slider__content
                     ul.links
                       - var links__item = ["HTML", "CSS", "Javascript"];
@@ -126,7 +126,7 @@ html(lang="ru")
                     .projects-slider__message
                       p Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 2 месяца только самых тяжелых испытаний и бессонных ночей!
                     .projects-slider__website-link
-                      .website-link Посмотреть сайт
+                      a(href="").website-link Посмотреть сайт
           .triangles.triangles_under
             svg(viewBox="0 0 1000 100" preserveAspectRatio="none").triangles__shape.triangles__shape_left
               polygon(points="0,0 1000,0 1000,100")
@@ -152,7 +152,7 @@ html(lang="ru")
                               .loftschool-review
                                 .loftschool-review__avatar
                                   .loftschool-review__photo
-                                    img(src="../src/images/content/feedback-1.png", alt="Ковальчук")
+                                    +image('content/feedback-1.png')
                                 .loftschool-review__information
                                   .loftschool-review__name Ковальчук Дмитрий
                                   .loftschool-review__position Основатель Loftschool
@@ -164,7 +164,7 @@ html(lang="ru")
                               .loftschool-review
                                 .loftschool-review__avatar
                                   .loftschool-review__photo
-                                    img(src="../src/images/content/feedback-2.png", alt="Сабанцев")
+                                    +image('content/feedback-2.png')
                                 .loftschool-review__information
                                   .loftschool-review__name Владимир Сабанцев
                                   .loftschool-review__position Преподаватель
@@ -175,18 +175,18 @@ html(lang="ru")
                     .form__row
                       label.form__field Введите ваше имя
                         .form__field__container
-                          img.form__field__icon(src=`../src/images/icons/user.svg`, alt="Профиль")                         
+                          +icon('user', 'form__field__icon')                        
                           .form__field__text
                             input.form__field__input(type="text" placeholder="Ерсаханов Куаныш")
                       label.form__field Введите ваш email
                         .form__field__container
-                          img.form__field__icon(src=`../src/images/icons/envelope.svg`, alt="Конверт")
+                          +icon('envelope', 'form__field__icon') 
                           .form__field__text
                             input.form__field__input(type="text" placeholder="kokanewj@gmail.com")
                     .form__row
                       label.form__field Сообщение к письму
                         .form__field__container
-                          img.form__field__icon(src=`../src/images/icons/message.svg`, alt="Диалог")
+                          +icon('message', 'form__field__icon') 
                           .form__field__text
                             input.form__field__input(type="text" placeholder="Требуется ваша помощь в создании сайта. Интересуют сроки и цена вопроса")
                     .form__row
@@ -212,12 +212,10 @@ html(lang="ru")
                   p Этот сайт я сделал в рамках обучения в Школе онлайн образования Loftschool
                 .footer__information_socials
                   ul.socials.socials__circles
-                   ul.socials
-                    each social in ['insta', 'vk', 'github']
+                   each item in socials
                       li.socials__item
-                        a(class=`socials__link` href="#")
-                          img.socials__icon(src=`../src/images/icons/${social}.svg`, alt="Соцсеть")
-
+                        a(href="#").socials__link
+                          +icon(item, 'socials__icon')
               .footer__information_right
                 .proverb
                   .proverb__message

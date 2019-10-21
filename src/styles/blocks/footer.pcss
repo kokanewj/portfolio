@@ -3,10 +3,26 @@
     color: #fff;
     padding: 75px 0;
     line-height: 1.8;
+    @include tablets {
+    padding: 50px 0;
+    }
+
     
     &__authorship {
       display: flex;
       width: 35%;
+      @include desktop {
+      flex-direction: column;
+      justify-content: flex-start;
+      width: 20%;
+      }
+      @include tablets {
+      width: 30%;
+      }
+      @include phones {
+      width: 100%;
+      margin-bottom: 30px;
+      }   
     }
     
     &__authorship_information {
@@ -21,15 +37,24 @@
       font-weight: bold;
       margin-bottom: 34px;
       margin-bottom: 23px;
+      @include phones {
+      margin-bottom: 7px;
+      }    
     }
 
     &__authorship_text {
       color: #fff;
       opacity: .2;
+      @include phones {
+      margin-bottom: 18px;
+      }
     }
 
     &__authorship_trademark {
       flex: 0.9;
+      @include tablets {
+      flex: initial;
+    }
     }
     
     &__authorship_year {
@@ -42,23 +67,47 @@
     &__container {
       display: flex;
       justify-content: space-between;
+      @include phones {
+      flex-direction: column;
+      }
     }
     
     &__information {
       width: 65%;
       padding-top: 15px;
+      @include desktop {
+      width: 75%;
+      }
+      @include tablets {
+      width: 60%;
+      }
+      @include phones {
+      width: 100%;
+      }
     }
     
     &__information_details {
       display: flex;
       justify-content: space-between;
+      @include tablets {
+      flex-direction: column;
+      justify-content: space-between;
+  }
     }
     
     &__information_left {
       width: 45%;
+      @include tablets {
+      width: 100%;
+      margin-bottom: 60px;
+  }
     }  
     &__information_right {
       width: 45%;
+      @include tablets {
+      width: 100%;
+      margin-bottom: 60px;
+    }
     }  
     
     &__information_text {
@@ -69,9 +118,22 @@
 
     &__menu {
       margin-bottom: 28px;
+      @include tablets {
+      margin-bottom: 30px;
+      }
+
   
       .menu__list {
         justify-content: flex-start;
+        @include tablets {
+        flex-wrap: wrap;
+       }
+      }
+      
+      .menu__item {
+      @include tablets {
+      margin-bottom: 32px;
+      }
       }
     }
   }

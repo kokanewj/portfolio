@@ -10,10 +10,19 @@
 
     &__menu {
       width: 100%;
+      @include tablets {
+      display: none;
+      }    
     }
 
     &__socials {
       width: 10%;
+      @include phones {
+      display: none;
+     }
+       @include tablets {
+       width: 20%;
+      }
     }
   }
   

@@ -4,6 +4,11 @@
     margin-right: 55px;
     font-weight: 600;
     cursor:pointer;
+    @include phones {
+    margin-right: 0;
+    margin-bottom: 40px;
+  }
+
 
     &:hover {
     border-bottom: 1px solid #5500f2;
@@ -56,6 +61,13 @@
   .form__row {
     display: flex;
     margin-bottom: 88px;
+    @include tablets {
+    justify-content: center;
+  }
+    @include phones {
+    flex-direction: column;
+    margin-bottom: 0;
+  }
   }
   .form-button {
     background-image: linear-gradient(to right, #ad00ed, #5500f2);
@@ -67,6 +79,11 @@
     font-weight: bold;
     outline:none;
     cursor: pointer;
+    @include phones {
+    width: 100%;
+    padding-right: 10px;
+    padding-left: 10px;
+  }
   }
   
   

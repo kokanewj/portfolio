@@ -32,22 +32,42 @@
   &__header {
     display: flex;
     margin-bottom: 90px;
+    @include phones {
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 33px;
+    }
   }
   
   &__title {
     font-size:36px;
-    font-weight: 600;
+    font-weight: 700;
     margin-bottom: 0;
-    margin-right: 126px;
+    margin-right: 12%;
+    @include phones {
+    margin-right: 0%;
+    margin-bottom: 25px;
+  }
   }
   
   &__content-wrapper {
     display: flex;
     align-items: flex-start;
+    @include tablets {
+    margin-left: 0;
+    }
+    @include phones {
+    width: 100%;
+    margin-left: 0;
+    }
   }
   
   &__content-item {
-    padding-right: 20px;
+    padding-right: 15px;
+    @include phones {
+    margin-right: 0;
+    width: 100%;
+    }
   }  
 }
 

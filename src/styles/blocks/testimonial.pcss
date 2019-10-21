@@ -1,6 +1,9 @@
 .testimonial {
     position: relative;
     padding-left: 25%;
+    @include tablets {
+    padding-left: 15%;
+    }
   
     &:before {
       content: "";
@@ -11,8 +14,10 @@
       position: absolute;
       top: 0;
       left: 0;
-      background: url('../images/icons/quote.svg') center/ contain no-repeat;
-  
+      background: svg-load('quote.svg', width=100%, height=100%) center center no-repeat;
+      @include tablets {
+      background: none;
+    }
     }
 
     &__text {

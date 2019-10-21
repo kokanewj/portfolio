@@ -10,6 +10,21 @@ html(lang="ru")
     .wrapper
       .maincontent
         .main-block
+          //- section.parallax
+          //-   .parallax__layer(data-speed="0.1")
+          //-     img(src=require("images/parallax/1.png")).parallax__image 
+          //-   .parallax__layer(data-speed="0.13")
+          //-     img(src=require("images/parallax/2.png")).parallax__image
+          //-   .parallax__layer(data-speed="0.16")
+          //-     img(src=require("images/parallax/3.png")).parallax__image
+          //-   .parallax__layer(data-speed="0.2")
+          //-     img(src=require("images/parallax/4.png")).parallax__image
+          //-   .parallax__layer(data-speed="0.23")
+          //-     img(src=require("images/parallax/5.png")).parallax__image
+          //-   .parallax__layer(data-speed="0.25")
+          //-     img(src=require("images/parallax/6.png")).parallax__image
+          //-   .parallax__layer(data-speed="0.28")
+          //-     img(src=require("images/parallax/7.png")).parallax__image  
           section.profile
             .container.profile__container
               header.header
@@ -35,8 +50,7 @@ html(lang="ru")
                  p веб-разработчика
                 .profile_welcome__username Куаныш Ерсаханов
               .profile__button
-                a(href="").scroll__button Скролл
-                  
+                a(href="").scroll__button Скролл                               
           section.info
             .container
               .info__block
@@ -76,57 +90,12 @@ html(lang="ru")
                     .achievements__message
                       p Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
                 .achievements__skills
-                  .achievements__skills-container
-                    ul.user-skills
-                      - 
-                        var skills = [
-                          ['Frontend', ['HTML5','CSS3','Javascript', 'Jquery и Vue.js']], 
-                          ['Workflow', ['GIT','Terminal','Gulp','Webpack']]
-                        ]
-                      each item in skills
-                        li.user-skills__item
-                           div.skills-row
-                            .skills-row__title #{item[0]}
-                            ul.skills-row__list
-                              each skill in item[1]
-                                li.skills-row__item
-                                  .skill
-                                      svg(viewBox="0 0 100 100").skill__shape
-                                        circle(cx="50" cy="50" r="40").skill__circle.skill__circle--position--under
-                                        circle(cx="50" cy="50" r="40" stroke="url(#gradient)" transform='rotate(180 50 50)').skill__circle.skill__circle--position--above       
-                                      .skill__title #{skill}
-                    svg
-                      linearGradient(id="gradient" x1="0%" y1="0%" x2="100%" y2="0")
-                        stop(offset="0%" stop-color="#5500f2")
-                        stop(offset="100%" stop-color="#ad00ed")                    
+                  #skills-component
           section.projects
             .container.projects__container
               .projects__title Мои работы
               .projects__content
-                .projects-slider
-                  .projects-slider__slides(data-slide="4")
-                    .projects-slider__slide
-                      +image('slider/Burger.jpg', 'projects-slider__main', 'Slider')
-                    .projects-slider__buttons
-                      a(href="#").projects-slider__button.projects-slider__button_next
-                      a(href="#").projects-slider__button.projects-slider__button_prev
-                    ul.projects-slider__other-slides
-                      - var slide__item = ["Burger.jpg", "Burger.jpg", "Burger.jpg"];
-                      each slide in slide__item 
-                        li.projects-slider__others-item
-                          a.projects-slider__others-link
-                            +image('slider/Burger.jpg', 'projects-slider__others', 'Превью')
-                  .projects-slider__content
-                    ul.links
-                      - var links__item = ["HTML", "CSS", "Javascript"];
-                      each link in links__item 
-                        li.links-item
-                          .link #{link}
-                    .projects-slider__text Сайт школы образования
-                    .projects-slider__message
-                      p Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 2 месяца только самых тяжелых испытаний и бессонных ночей!
-                    .projects-slider__website-link
-                      a(href="").website-link Посмотреть сайт
+                #slider-component
           .triangles.triangles_under
             svg(viewBox="0 0 1000 100" preserveAspectRatio="none").triangles__shape.triangles__shape_left
               polygon(points="0,0 1000,0 1000,100")
@@ -221,3 +190,5 @@ html(lang="ru")
                   .proverb__message
                     p Всегда пишите код так, будто сопровождать его будет склонный к насилию психопат, который знает где вы живете 
                   .proverb__author Martin Golding
+
+    include ./templates/entry.pug

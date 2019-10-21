@@ -1,0 +1,54 @@
+script(type="text/x-template")#slider-container
+    .projects-slider
+        display(
+            :works="works"
+            :current-work="currentWork"
+            :current-index="currentIndex"
+            @slide="handleSlide"
+        )
+        info(
+            :current-work="currentWork"
+        )
+
+script(type="text/x-template")#slider-display
+    .projects-slider__slides(:data-slide="currentIndex + 1")
+        .projects-slider__slide
+            img(:src="currentWork.photo").projects-slider__main
+        thumbs(
+            :works="works"
+            :current-work="currentWork"
+        )
+        btns(
+            @slide="$emit('slide', $event)"
+        )
+
+script(type="text/x-template")#slider-thumbs
+    ul.projects-slider__other-slides
+        li.projects-slider__others-item(
+            v-for="work in reversedWorks" 
+            :key="work.id"
+            :class="{active: work.id === currentWork.id }"
+        )
+            a.projects-slider__others-link
+                img(:src="work.photo" alt="")
+
+script(type="text/x-template")#slider-btns
+    .projects-slider__buttons
+        a(@click.prevent="$emit('slide', 'next')").projects-slider__button.projects-slider__button_next
+        a(@click.prevent="$emit('slide', 'prev')").projects-slider__button.projects-slider__button_prev
+
+script(type="text/x-template")#slider-info
+    .projects-slider__content
+        tags(
+            :tags="tagsArray"
+        )
+        .projects-slider__text {{currentWork.title}}
+        .projects-slider__message
+            p {{currentWork.desc}}
+        .projects-slider__website-link
+            a(:href="currentWork.link").website-link Посмотреть сайт
+
+script(type="text/x-template")#slider-tags
+    ul.links
+        li.links-item(v-for="tag in tags" :key="tag")
+            .link {{tag}}

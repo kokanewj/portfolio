@@ -23,6 +23,17 @@
       flex-direction: column;
       padding: 0 25%;
       margin-bottom: 28%;
+      @include desktop {
+      display: flex;
+      flex-direction: row;
+      align-items: flex-start;
+
+      }
+      @include tablets {
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+      }
     }
 
     &_welcome__text {
@@ -31,6 +42,20 @@
       opacity:.4;
       font-weight: 600;
       margin-bottom: 20px;
+      @include desktop {
+      text-align: right;
+      margin-bottom: 0;
+      padding-top: 8px;
+      margin-right: 5%;
+      }
+      @include tablets {
+      text-align: center;
+      margin-right: 0;
+      }
+      @include phones {
+      font-size: 14px;
+      padding: 0 10%;
+      }
     }
 
     &_welcome__username {
@@ -38,6 +63,9 @@
       font-weight: 800;
       text-align: center;
       line-height: 0.9;
+      @include phones {
+      font-size: 36px;
+      }
     }
   }
 

@@ -1,8 +1,18 @@
 .achievements {
   width: 100%;
+    @include desktop {
+    margin-bottom: 10%;
+  }
+    @include phones {
+    margin-bottom: 75px;
+  }
+
 
   &__container {
     position: relative;
+    @include tablets {
+    padding-bottom: 250px;
+    }
     &:before {
       content: "";
       position: absolute;
@@ -12,6 +22,24 @@
       bottom: 10%;
       width: 71%;
       left: -12%;
+      @include desktopHd {
+      height: 95%;
+      bottom: 0;
+      }
+      @include desktop {
+      left: -22%;
+      bottom: 0;
+      }
+      @include tablets {
+      bottom: 0;
+      left: 50%;
+      height: 300px;
+      transform: translateX(-50%);
+      background-position: center center;
+      }
+      @include phones {
+      width: 100%;
+      }
     }
   }
   
@@ -26,15 +54,41 @@
   &__skills {
     display: flex;
     justify-content: flex-end;
+    @include tablets {
+    justify-content: center;
+    }
   }
   
   &__skills-container {
     width: 57%;
+    @include desktop {
+    width: 68%;
+    }
+    @include tablets {
+    width: 95%;
+    }
   }
 
   &__text {
     width: 42%;
     margin: 0 35%;
+    @include desktop {
+    width: 42%;
+    margin-left: 0;
+    }
+    @include desktop {
+    width: 42%;
+    margin: 0 35%;
+    }
+    @include tablets {
+    width: 100%;
+    text-align: center;
+    }
+    @include phones {
+    width: 100%;
+    margin-left: 0;
+    text-align: left;
+    }
   }
 
   &__welcome {

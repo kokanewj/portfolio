@@ -11,6 +11,14 @@
       display: flex;
       justify-content: space-between;
       padding: 8% 18% 10%;
+      @include tablets {
+      padding: 8% 2% 25%;
+      }
+      @include phones {
+      flex-direction: column;
+      padding-top: 114px;
+      padding-bottom: 114px;
+      }
     }
 
     &__hello {
@@ -19,12 +27,29 @@
       margin-bottom: 15px;
     }
 
+    &__me {
+    width: 35%;
+    @include phones {
+    width: 100%;
+    margin-bottom: 50px;
+    }
+    }
+
+    &__me_content {
+    @include phones {
+    margin-bottom: 10%;
+    }
+    }
+
     &__me_text {
       display: flex;
       flex-direction: column;
       justify-content: space-between;
       color: $text-color;
       width: 55%;
+      @include phones {
+      width: 100%;
+     }
     }
 
     &__name {

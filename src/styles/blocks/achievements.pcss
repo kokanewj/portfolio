@@ -11,7 +11,10 @@
   &__container {
     position: relative;
     @include tablets {
-    padding-bottom: 250px;
+    padding-bottom: 40%;
+    }
+    @include phones {
+    padding-bottom: 80%;
     }
     &:before {
       content: "";
@@ -81,8 +84,9 @@
     margin: 0 35%;
     }
     @include tablets {
-    width: 100%;
+    width: 65%;
     text-align: center;
+    margin: 0 20%;
     }
     @include phones {
     width: 100%;

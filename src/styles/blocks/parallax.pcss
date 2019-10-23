@@ -1,7 +1,10 @@
 .parallax {
-  position: relative;
-  overflow:hidden;
-  height: 1400px;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  @include phones {
+    display: none;
+  }
 }
 
 .parallax__layer {
@@ -21,14 +24,14 @@
   }
   &:nth-child(2) {
     .parallax__image {
-      top: 360px;
       right: 0;
+      top: 360px;
     }
   }
   &:nth-child(3) {
     .parallax__image {
-      left: 50%;
       top: 518px;
+      left: 50%;
       margin-left: 12%;
     }
   }
@@ -53,12 +56,11 @@
   &:nth-child(7) {
     .parallax__image {
       left: 0;
-      bottom: 0px;
+      bottom: -400px;
     }
   }
 }
 
 .parallax__image {
-    left:0;
-    bottom: -400px;
+    position:absolute;
 }

@@ -2,6 +2,7 @@ const parallax = document.querySelector(".parallax");
 const layers = parallax.children;
 
 function moveLayersDependsOnScroll(wscroll) {
+  
   Array.from(layers).forEach((layer) => {
     
     const divider = layer.dataset.speed;
@@ -9,6 +10,7 @@ function moveLayersDependsOnScroll(wscroll) {
 
     layer.style.transform = `translateY(-${strafe}%)`;
   });
+
 }
 
   window.addEventListener("scroll", e => {

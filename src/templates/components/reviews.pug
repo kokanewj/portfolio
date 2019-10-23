@@ -1,0 +1,27 @@
+script(type="text/x-template")#reviews-main
+    .reviews#reviews
+        .reviews__header
+            .reviews__title Что обо мне говорят
+            .reviews__buttons
+                button(type="button" @click="previous()").reviews__button.reviews__button_prev
+                button(type="button" @click="next()").reviews__button.reviews__button_next
+        .reviews__content
+            flickity(ref="flickity" :options="flickityOptions").reviews__content-wrapper
+                - for (var i=0; i<3; i++)
+                    .reviews__content-item.carousel-cell(v-for="review in reviews" :key="review.id")
+                        review(
+                            :review="review"
+                        )
+
+script(type="text/x-template")#reviews-slide                
+    .testimonial
+        .testimonial__text
+            p {{review.text}}
+        .testimonial__author
+            .loftschool-review
+                .loftschool-review__avatar
+                    .loftschool-review__photo
+                        img(:src="review.avatar" :alt="review.author")
+                .loftschool-review__information
+                    .loftschool-review__name {{review.author}}
+                    .loftschool-review__position {{review.position}}

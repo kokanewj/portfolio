@@ -1,6 +1,8 @@
 .main-block {
-  background: url('../images/background/balloon.png') center top no-repeat / cover;
   position: relative;
+  @include phones {
+    background: url('../images/background/balloon.png') center top no-repeat / cover;
+  }
 }
 
 .second-block {

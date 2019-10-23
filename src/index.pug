@@ -10,21 +10,21 @@ html(lang="ru")
     .wrapper
       .maincontent
         .main-block
-          //- section.parallax
-          //-   .parallax__layer(data-speed="0.1")
-          //-     img(src=require("images/parallax/1.png")).parallax__image 
-          //-   .parallax__layer(data-speed="0.13")
-          //-     img(src=require("images/parallax/2.png")).parallax__image
-          //-   .parallax__layer(data-speed="0.16")
-          //-     img(src=require("images/parallax/3.png")).parallax__image
-          //-   .parallax__layer(data-speed="0.2")
-          //-     img(src=require("images/parallax/4.png")).parallax__image
-          //-   .parallax__layer(data-speed="0.23")
-          //-     img(src=require("images/parallax/5.png")).parallax__image
-          //-   .parallax__layer(data-speed="0.25")
-          //-     img(src=require("images/parallax/6.png")).parallax__image
-          //-   .parallax__layer(data-speed="0.28")
-          //-     img(src=require("images/parallax/7.png")).parallax__image  
+          section.parallax
+            .parallax__layer(data-speed="0.1")
+              img(src=require("images/parallax/1.jpg")).parallax__image 
+            .parallax__layer(data-speed="0.13")
+              img(src=require("images/parallax/2.png")).parallax__image
+            .parallax__layer(data-speed="0.8")
+              img(src=require("images/parallax/3.png")).parallax__image
+            .parallax__layer(data-speed="0.2")
+              img(src=require("images/parallax/4.png")).parallax__image
+            .parallax__layer(data-speed="0.23")
+              img(src=require("images/parallax/5.png")).parallax__image
+            .parallax__layer(data-speed="0.25")
+              img(src=require("images/parallax/6.png")).parallax__image
+            .parallax__layer(data-speed="0.28")
+              img(src=require("images/parallax/7.png")).parallax__image  
           section.profile
             .container.profile__container
               header.header
@@ -44,6 +44,10 @@ html(lang="ru")
                       li.socials__item
                         a(href="#").socials__link
                           +icon(item, 'socials__icon')
+                .bar-container
+                  .bar1
+                  .bar2
+                  .bar3
               .profile__welcome
                 .profile_welcome__text 
                  p Личный сайт 
@@ -105,38 +109,7 @@ html(lang="ru")
           section.feedback
             .container.feedback__container
               .feedback__about
-                .reviews
-                  .reviews__header
-                    .reviews__title Что обо мне говорят
-                    .reviews__buttons
-                      button(type="button").reviews__button.reviews__button_prev
-                      button(type="button").reviews__button.reviews__button_next
-                  .reviews__content
-                    ul.reviews__content-wrapper
-                        li.reviews__content-item
-                          .testimonial
-                            .testimonial__text
-                              p Этот парень проходил обучение веб-разработке не где-то, а в Loftschool! 4,5 месяца только самых тяжелых испытаний и бессонных ночей!
-                            .testimonial__author
-                              .loftschool-review
-                                .loftschool-review__avatar
-                                  .loftschool-review__photo
-                                    +image('content/feedback-1.png')
-                                .loftschool-review__information
-                                  .loftschool-review__name Ковальчук Дмитрий
-                                  .loftschool-review__position Основатель Loftschool
-                        li.reviews__content-item
-                          .testimonial
-                            .testimonial__text
-                              p Этот код выдержит любые испытания. Только пожалуйста, не загружайте сайт на слишком старых браузерах
-                            .testimonial__author
-                              .loftschool-review
-                                .loftschool-review__avatar
-                                  .loftschool-review__photo
-                                    +image('content/feedback-2.png')
-                                .loftschool-review__information
-                                  .loftschool-review__name Владимир Сабанцев
-                                  .loftschool-review__position Преподаватель
+                #reviews-component
 
               .feedback__form
                   .feedback__title Связаться со мной

@@ -25,7 +25,7 @@ html(lang="ru")
               img(src=require("images/parallax/6.png")).parallax__image
             .parallax__layer(data-speed="0.28")
               img(src=require("images/parallax/7.png")).parallax__image  
-          section.profile
+          section.profile#profile
             .container.profile__container
               header.header
                 .header__logo
@@ -34,20 +34,46 @@ html(lang="ru")
                   nav.menu
                     ul.menu__list
                       - var links = ['Главная', "Обо мне", "Навыки", "Работы", "Отзывы", "Связаться"];
+                      - var anchors = ["#profile", "#info", "#achievements", "#projects", "#reviews", "#feedback"];
                       each item in links 
                         li.menu__item
                           a(href="#").menu__link #{item}
                 .header__socials
                   ul.socials
                     - var socials = ['insta', 'vk', 'github'];
+                    - var websites = ['https://www.instagram.com/', 'https://vk.com', "https://github.com"];
                     each item in socials
                       li.socials__item
                         a(href="#").socials__link
                           +icon(item, 'socials__icon')
-                .bar-container
-                  .bar1
-                  .bar2
-                  .bar3
+                .header__burger
+                  .burger-menu
+                    .burger-menu__bar1
+                    .burger-menu__bar2
+                    .burger-menu__bar3
+                
+                .sidebar-menu
+
+                  .sidebar-menu__buttons
+                    .sidebar-menu__close
+                      +icon('remove')
+
+                  .sidebar-menu__nav
+                    ul.sidebar-menu__list
+                      each item, index in links
+                        li.sidebar-menu__item
+                          a(href=`${anchors[index]}`).sidebar-menu__link #{item}
+                      
+                    .sidebar-menu__socials
+                      .socials
+                        ul.socials__list
+                          each item, index in socials
+                            li(class=`socials__item`)
+                              a(href=`${websites[index]}` target="_blank").socials__link
+                                +icon(item, `socials__icon`)
+
+
+
               .profile__welcome
                 .profile_welcome__text 
                  p Личный сайт 
@@ -55,7 +81,7 @@ html(lang="ru")
                 .profile_welcome__username Куаныш Ерсаханов
               .profile__button
                 a(href="").scroll__button Скролл                               
-          section.info
+          section.info#info
             .container
               .info__block
                 .info__me
@@ -86,7 +112,7 @@ html(lang="ru")
           svg(viewBox="0 0 1000 100" preserveAspectRatio="none").triangles__shape.triangles__shape_right
             polygon(points="0,100 1000,100 1000,0")        
         .second-block 
-          section.achievements
+          section.achievements#achievements
             .container.achievements__container
               .achievements__wrapper
                 .achievements__text
@@ -95,7 +121,7 @@ html(lang="ru")
                       p Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
                 .achievements__skills
                   #skills-component
-          section.projects
+          section.projects#projects
             .container.projects__container
               .projects__title Мои работы
               .projects__content
@@ -106,12 +132,12 @@ html(lang="ru")
             svg(viewBox="0 0 1000 100" preserveAspectRatio="none").triangles__shape.triangles__shape_right
               polygon(points="0,0 0,100 1000,0")
 
-          section.feedback
+          section.feedback#reviews
             .container.feedback__container
               .feedback__about
                 #reviews-component
 
-              .feedback__form
+              .feedback__form#feedback
                   .feedback__title Связаться со мной
                   form.form__card
                     .form__row

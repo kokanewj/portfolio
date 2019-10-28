@@ -106,11 +106,24 @@
   &__others-item {
     height: 98px;
     cursor:pointer;
+    position:relative;
     &.active,
     &:hover {
       outline: 3px solid #5500f2;
       transition:.3s;
     }
+     &.active:after {
+      content: "";
+      display: block;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: #5500f2;
+      opacity: 0.3;
+      transition: all 0.3s linear; 
+     }
   }
   
   &__others {

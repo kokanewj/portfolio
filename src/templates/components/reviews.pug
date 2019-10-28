@@ -7,11 +7,10 @@ script(type="text/x-template")#reviews-main
                 button(type="button" @click="next()").reviews__button.reviews__button_next
         .reviews__content
             flickity(ref="flickity" :options="flickityOptions").reviews__content-wrapper
-                - for (var i=0; i<3; i++)
-                    .reviews__content-item.carousel-cell(v-for="review in reviews" :key="review.id")
-                        review(
-                            :review="review"
-                        )
+                .reviews__content-item.carousel-cell(v-for="review in reviews" :key="review.id")
+                    review(
+                        :review="review"
+                    )
 
 script(type="text/x-template")#reviews-slide                
     .testimonial

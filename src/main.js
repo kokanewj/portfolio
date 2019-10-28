@@ -7,3 +7,5 @@ import "./scripts/skills";
 import "./scripts/works";
 import "./scripts/parallax";
 import "./scripts/reviews";
+import "./scripts/scroll";
+import "./scripts/sidebar-menu";

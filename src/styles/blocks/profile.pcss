@@ -1,6 +1,7 @@
 .profile {
     position: relative;
     padding-top: 55px;
+    height: 100vh;
 
     &__container {
       display: flex;
@@ -74,6 +75,9 @@
     font-size: 18px;
     font-weight: 600;
     text-decoration:none;
+      @include tablets {
+        display:none;
+      }
 
     &:hover {
       text-decoration: underline;

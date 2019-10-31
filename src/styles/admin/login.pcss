@@ -1,0 +1,85 @@
+.login {
+    height: 100vh; 
+    width: 100%; 
+    background: linear-gradient(rgba(45,60,78,.9),rgba(45,60,78,.9)), url('../images/background/balloon.png') no-repeat center;
+    background-size: cover;
+    }
+
+.container-login {
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    height: 100%;
+    }
+
+.form-login {
+    background: #fff; 
+    position: relative; 
+    padding: 40px 70px; 
+    text-align: center; 
+    @include phones {
+        width: 100%; 
+        height: 100%; 
+        display: flex; 
+        flex-direction: column; 
+        justify-content: center; 
+        }
+    }
+
+.form-login__label {
+    position: relative; 
+    display: flex; 
+    flex-direction: column; 
+    margin-bottom: 40px; 
+    color: #d3d4d9; 
+    padding: 5px 40px;  
+    text-align: left; 
+    @include phones {
+        margin-bottom: 50px;
+        } 
+    border-bottom: 1px solid #414d63; 
+    }
+
+.form-login__input {
+    padding-top: 10px; 
+    color:#414d63; 
+    font-weight: 700; 
+    outline: none; 
+    border: none;
+    }
+
+.form-login__label-login:before{
+    content:''; 
+    position: absolute; 
+    height: 30px; 
+    width: 30px; 
+    background: svg-load('avatar.svg', fill = #d3d4d9, width = 100%, height = 100% ) no-repeat center; bottom: 5px; left: 0}
+
+.form-login__label-password:before{
+    content:''; 
+    position: absolute; 
+    height: 30px; 
+    width: 30px; 
+    background: svg-load('key.svg', fill = #d3d4d9, width = 100%, height = 100% ) no-repeat center; 
+    bottom: 5px; 
+    left: 0
+    }
+.form-login__heading {
+    width: 100%; 
+    text-align: center; 
+    font-size: 36px; 
+    font-weight: 600; 
+    margin-bottom: 40px; 
+    @include phones {
+        margin-bottom: 50px; 
+        } 
+    }
+.login-exit {
+    grid-area: exit; 
+    color: rgba(255, 255, 255, 0.5); 
+    text-align: right; 
+    &:hover {
+        color:#fff; 
+        transition:0.5s;
+        }
+    }

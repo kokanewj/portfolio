@@ -138,27 +138,8 @@ html(lang="ru")
                 #reviews-component
 
               .feedback__form#feedback
-                  .feedback__title Связаться со мной
-                  form.form__card
-                    .form__row
-                      label.form__field Введите ваше имя
-                        .form__field__container
-                          +icon('user', 'form__field__icon')                        
-                          .form__field__text
-                            input.form__field__input(type="text" placeholder="Ерсаханов Куаныш")
-                      label.form__field Введите ваш email
-                        .form__field__container
-                          +icon('envelope', 'form__field__icon') 
-                          .form__field__text
-                            input.form__field__input(type="text" placeholder="kokanewj@gmail.com")
-                    .form__row
-                      label.form__field Сообщение к письму
-                        .form__field__container
-                          +icon('message', 'form__field__icon') 
-                          .form__field__text
-                            input.form__field__input(type="text" placeholder="Требуется ваша помощь в создании сайта. Интересуют сроки и цена вопроса")
-                    .form__row
-                      input(type="submit" value="ОТПРАВИТЬ").form-button
+                .feedback__title Связаться со мной
+                  #feedback-template
 
       footer.footer
         .container.footer__container

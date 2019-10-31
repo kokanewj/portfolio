@@ -1,0 +1,175 @@
+.button__add-group {
+    position: relative; 
+    margin-left: 25px;
+    color: #3f35cb;
+    font-weight:600;
+    &:before{
+    content: "+";
+    padding: 5px 8px;
+    color: #fff;
+    display: inline-block;
+    background-image: linear-gradient(90deg,#006aed,#3f35cb);
+    border-radius: 50%;
+    margin-right: 12px;
+    flex-shrink: 0;
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 1;
+    transition: margin-right .3s;
+    }
+}
+
+.button__add-skill {
+    background:transparent;
+    background-size: contain;
+    margin-left: 15px;
+    &:before {
+    content: "+";
+    padding: 10px 17px;
+    color: #fff;
+    display: inline-block;
+    background-image: linear-gradient(90deg,#006aed,#3f35cb);
+    border-radius: 50%;
+    flex-shrink: 0;
+    font-size: 30px;
+    font-weight: 600;
+    line-height: 1;
+    transition: margin-right .3s;
+    }
+}
+
+.button__create {
+  height: 20px; 
+  width: 20px; 
+  margin-right: 10px; 
+  background: svg-load('tick.svg', fill = #02d70c, width = 100%, height = 100% ) no-repeat center;
+  }
+
+.button__cancel {
+    height: 20px; 
+    width: 20px; 
+    background: svg-load('cross.svg', fill = #bf2929, width = 100%, height = 100% ) no-repeat center;
+    }
+
+.button__edit {
+    height: 20px; 
+    width: 20px; 
+    background: svg-load('pencil.svg', fill = #b4b8c1, width = 100%, height = 100% ) no-repeat center; 
+    outline:none;
+    }
+
+.button__delete {
+    height: 20px; 
+    width: 20px; 
+    background: svg-load('trash.svg', fill = #b4b8c1, width = 100%, height = 100% ) no-repeat center; 
+    margin-left: 10px;
+    }
+
+.button__submit {
+    background-image: linear-gradient(90deg,#006aed,#3f35cb); 
+    color:#fff; 
+    padding: 20px 30px; 
+    border-radius: 35px;  
+    text-transform: uppercase; 
+    margin: 0 auto; 
+    cursor: pointer; 
+    outline:none;
+    }
+
+.button__save {
+    margin: 0 0; 
+    margin-left: 20px; 
+    font-weight:600;
+    }
+
+.button__add-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; margin: 10px; padding: 30px; 
+    background-image: linear-gradient(90deg,#006aed,#3f35cb); 
+    color:#fff; 
+    @include phones {
+        margin: 0;
+        } 
+    }
+.button__pic {
+  &:before {
+  content: "+"; 
+  border-radius: 50%; 
+  font-size: 60px; 
+  border: 2px solid #fff; 
+  width: 150px; 
+  margin: 0 auto; 
+  height: 150px;     
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+    }
+}
+
+.button__card-edit {
+    position:relative;
+    outline:none;
+    color: ##7a8191;
+    font-weight: 600; 
+    &:after {
+    content: ""; 
+    position: absolute;
+    margin-left: 5px;
+    bottom: 3px;
+    height: 15px;
+    width: 15px; 
+    background: svg-load('pencil.svg', fill = #383bcf, width = 100%, height = 100% ) no-repeat center
+    }
+}
+
+.button__card-delete {
+    position:relative; 
+    margin-right: 20px; 
+    outline:none; 
+    color: ##7a8191; 
+    font-weight: 600; 
+    &:after{
+        content: ""; 
+        position: absolute;
+        margin-left: 5px;
+        bottom: 3px;
+        height: 15px;
+        width: 15px; 
+        background: svg-load('cross.svg', fill = #c92e2e, width = 100%, height = 100% ) no-repeat center
+        }
+    }
+
+.button__add-photo {
+    color: #383bcf; 
+    margin-top: 30px; 
+    font-weight: 600; 
+    cursor: pointer; 
+    width: 100%; 
+    text-align: center;
+    }
+
+.button-login-exit {
+    position: absolute; 
+    top: 15px; 
+    right: 15px; 
+    height: 15px; 
+    width: 15px; 
+    background: svg-load('cross.svg', fill = #454c5f, width = 100%, height = 100% ) no-repeat center;
+    }
+
+.button-login-submit  {
+    border-radius: 40px 5px;
+    background-image: linear-gradient(90deg,#ad00ed,#5500f2);
+    padding: 30px 120px;
+    color: #fff;
+    font-weight:700;
+    text-transform: uppercase;
+    transition: 0.3s;
+    &:hover {
+        background: linear-gradient( 90deg, rgb(147,0,232) 60%, rgb(111,0,235) 100%);
+        transition: 0.3s;
+    }
+  }

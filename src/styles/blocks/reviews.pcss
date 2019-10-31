@@ -50,9 +50,13 @@
   }
   }
   
+  &__content {
+    overflow:hidden;
+  }
+
   &__content-wrapper {
-    display: flex;
-    align-items: flex-start;
+    will-change: transform;
+    transition: transform .3s,-webkit-transform .3s;
     @include tablets {
     margin-left: 0;
     }
@@ -64,6 +68,8 @@
   
   &__content-item {
     padding-right: 15px;
+    flex-shrink:0;
+    width:50%;
     @include phones {
     margin-right: 0;
     width: 100%;
@@ -71,3 +77,6 @@
   }  
 }
 
+.flickity-viewport {
+  height:180px;
+}

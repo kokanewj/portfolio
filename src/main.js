@@ -9,3 +9,4 @@ import "./scripts/parallax";
 import "./scripts/reviews";
 import "./scripts/scroll";
 import "./scripts/sidebar-menu";
+import "./scripts/feedbackvalidation";

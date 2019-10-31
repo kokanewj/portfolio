@@ -16,10 +16,11 @@ new Vue({
   data: {
     reviews: [],
     flickityOptions: {
-      initialIndex: 3,
+      initialIndex: 0,
       prevNextButtons: false,
       pageDots: false,
-      wrapAround: true
+      contain: true,
+      groupCells:true
 
       // any options from Flickity can be used
     }

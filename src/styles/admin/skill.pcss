@@ -1,0 +1,76 @@
+.skills-card {
+display: grid;
+grid-template-columns: 1fr;
+grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+grid-template-areas: "name"
+"oldskill1"
+"oldskill2"
+"oldskill3"
+"oldskill4"
+"newskill"
+}
+.skills__form {
+    padding: 15px 0; 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center;
+        &:nth-child(1) {
+        border-bottom: 1px solid #dedee0;
+    }
+ }
+.skill-form__heading {
+    grid-area: name; 
+    align-items: center; 
+    color: #4e586d; 
+    font-size: 18px; 
+    font-weight: 700;
+    }
+.skills__form-skill__new  {
+    grid-area: newskill; 
+    justify-content: flex-end
+    }
+.skill__title {
+    width: 60%; 
+    border-bottom: 1px solid transparent; 
+    margin-left: 10px;
+    }
+.skill__title-edit {
+    width: 60%; 
+    margin-left: 10px; 
+    border:none; 
+    border-bottom: 1px solid; 
+    outline:none; 
+    padding-bottom: 10px;
+    }
+.skill__value {
+    width: 10%; 
+    border:none; 
+    border-bottom: 1px solid #000; 
+    margin-left: 10px; 
+    outline:none; 
+    padding-bottom: 10px;
+    }
+.old-skill {
+    margin-left: 15px; 
+    font-size:18px; 
+    width: 50%;
+    }
+    @include tablets {
+    .old-skill {
+        width:30%
+        }
+    }
+.skill__value-percentage {
+    border-bottom: 1px solid transparent; 
+    font-size: 18px; 
+    text-align: center;
+    }
+
+.new-skill {
+    width: 40%; 
+    border:none; 
+    border-bottom: 1px solid #000; 
+    margin-left: 10px; 
+    outline:none; 
+    padding-bottom: 10px;
+    }

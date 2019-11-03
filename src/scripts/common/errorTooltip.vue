@@ -16,7 +16,7 @@ export default {
 <style lang="postcss" scoped>
 .error-tooltip {
   z-index: 100;
-  background: #000;
+  background: red;
   color: #fff;
   padding: 12px 20px;
   font-size: 14px;
@@ -28,12 +28,12 @@ export default {
     height: 0;
     border: 10px solid transparent;
     border-top: 0;
-    border-bottom-color: #000;
+    border-bottom-color: red;
     border-bottom-width: 7px;
     position: absolute;
     bottom: 99%;
     z-index: 1000;
-    left: 0;
+    left: 45%;
   }
 }
 </style>

@@ -1,6 +1,9 @@
 .reviews{
   &__buttons {
     display: flex;
+    .disabled {
+    opacity: 0.4;
+    }
   }
   
   &__button {
@@ -77,6 +80,7 @@
   }  
 }
 
-.flickity-viewport {
-  height:180px;
+.flickity-prev-next-button.previous,
+.flickity-prev-next-button.next {
+  display: none;
 }

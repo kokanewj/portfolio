@@ -30,9 +30,13 @@ grid-template-areas: "name"
     justify-content: flex-end
     }
 .skill__title {
+    color: #000;
     width: 60%; 
     border-bottom: 1px solid transparent; 
     margin-left: 10px;
+    border:none;
+    pointer-events:none;
+    outline:none;
     }
 .skill__title-edit {
     width: 60%; 
@@ -49,11 +53,15 @@ grid-template-areas: "name"
     margin-left: 10px; 
     outline:none; 
     padding-bottom: 10px;
+    pointer-events:none;
     }
 .old-skill {
     margin-left: 15px; 
     font-size:18px; 
     width: 50%;
+    border:none;
+    pointer-events:none;
+    outline:none;
     }
     @include tablets {
     .old-skill {
@@ -73,4 +81,5 @@ grid-template-areas: "name"
     margin-left: 10px; 
     outline:none; 
     padding-bottom: 10px;
+    pointer-events:none;
     }

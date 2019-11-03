@@ -1,13 +1,13 @@
 script(type="text/x-template")#feedback-form-template
     form.form__card(@submit.prevent="sendMessage")
         .form__row
-            label.feedback-form__col(
+            label.form__field(
                 :class="{'error' : validation.firstError('user.name')}"
             )
-                label.form__field Введите ваше имя
+                span.form__field-label Введите ваше имя
                 .form__field__container
                     +icon('user', 'form__field__icon')                        
-                    .form__field__text
+                    .form__field__text 
                     input.form__field__input(
                         type="text" 
                         name="name" 
@@ -17,12 +17,11 @@ script(type="text/x-template")#feedback-form-template
                     .form__field-error
                         error-tooltip(
                             :errorText="validation.firstError('user.name')"
-                        )
-        .form__row                
-            label.feedback-form__col(
+                        )             
+            label.form__field(
                 :class="{'error' : validation.firstError('user.email')}"
             )
-                label.form__field Введите ваш email
+                span.form__field-label Введите ваш email
                 .form__field__container
                     +icon('envelope', 'form__field__icon') 
                     .form__field__text
@@ -35,15 +34,12 @@ script(type="text/x-template")#feedback-form-template
                     .form__field-error
                         error-tooltip(
                             :errorText="validation.firstError('user.email')"
-                        )
-            label.feedback-form__col(
-                :class="{'error' : validation.firstError('user.email')}"
-            )            
+                        )           
         .form__row
-            label.feedback-form__col(
+            label.form__field(
                 :class="{'error' : validation.firstError('user.message')}"
-            )
-                label.form__field Сообщение к письму
+            ) 
+                span.form__field-label Сообщение к письму
                 .form__field__container
                     +icon('message', 'form__field__icon') 
                     .form__field__text
@@ -56,7 +52,5 @@ script(type="text/x-template")#feedback-form-template
                         error-tooltip(
                             :errorText="validation.firstError('user.message')"
                         )
-            .form__row
-                input(type="submit" value="ОТПРАВИТЬ").form-button
-
-
+        .form__row
+            input(type="submit" value="ОТПРАВИТЬ").form-button

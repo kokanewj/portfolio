@@ -3,11 +3,12 @@ import SimpleVueValidation from 'simple-vue-validator'
 
 Vue.use(SimpleVueValidation)
 
+import { Validator } from 'simple-vue-validator'
 
 new Vue({
   el: '#feedback-template',
   template: '#feedback-form-template',
-  mixins: [SimpleVueValidator.mixin],
+  mixins: [SimpleVueValidation.mixin],
   data() {
     return {
       user: {

@@ -3,10 +3,10 @@ script(type="text/x-template")#reviews-main
         .reviews__header
             .reviews__title Что обо мне говорят
             .reviews__buttons
-                button(type="button" @click="previous()").reviews__button.reviews__button_prev
-                button(type="button" @click="next()").reviews__button.reviews__button_next
-        .reviews__content
-            flickity(ref="flickity" :options="flickityOptions").reviews__content-wrapper
+                button(type="button" @click="previous()" :disabled="currentIndex === 0" :class="{disabled: currentIndex === 0}").reviews__button.reviews__button_prev 
+                button(type="button" @click="next()" :disabled="reviews.length === currentIndex" :class="{disabled: reviews.length === currentIndex}").reviews__button.reviews__button_next
+        .reviews__content(v-if="reviews.length")
+            flickity(ref="flickity" :options="flickityOptions" @init="onInit").reviews__content-wrapper
                 .reviews__content-item.carousel-cell(v-for="review in reviews" :key="review.id")
                     review(
                         :review="review"

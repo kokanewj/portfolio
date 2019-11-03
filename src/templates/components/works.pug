@@ -5,6 +5,7 @@ script(type="text/x-template")#slider-container
             :current-work="currentWork"
             :current-index="currentIndex"
             @slide="handleSlide"
+            @hover="handleHover"
         )
         info(
             :current-work="currentWork"
@@ -13,34 +14,42 @@ script(type="text/x-template")#slider-container
 script(type="text/x-template")#slider-display
     .projects-slider__slides(:data-slide="currentIndex + 1")
         .projects-slider__slide
-            img(:src="currentWork.photo").projects-slider__main
-        thumbs(
-            :works="works"
-            :current-work="currentWork"
-        )
-        btns(
-            @slide="$emit('slide', $event)"
-        )
+            transition(name="slide-fade")
+                img(:src="currentWork.photo").projects-slider__main
+            thumbs(
+                :works="works"
+                :current-work="currentWork"
+                :current-index="currentIndex"
+                @slide="handleSlide"
+                @hover="handleHover"
+            )
+            btns(
+                @slide="handleSlide"
+                :currentWorkId="currentWork.id"
+                :worksLength="works.length"
+            )
 
 script(type="text/x-template")#slider-thumbs
-    ul.projects-slider__other-slides
+    ul.projects-slider__other-slides(
+        :style="{transform: `translateY(-${translate}%)`}"
+    )
         li.projects-slider__others-item(
-            v-for="work in reversedWorks" 
+            v-for="work, index in works" 
             :key="work.id"
             :class="{active: work.id === currentWork.id }"
         )
-            a.projects-slider__others-link
+            a.projects-slider__others-link(@mouseenter="$emit('hover', 'enter')", @mouseleave="$emit('hover', 'leave')", @click.prevent="$emit('slide', index)")
                 img(:src="work.photo" alt="")
 
 script(type="text/x-template")#slider-btns
     .projects-slider__buttons
-        a(@click.prevent="$emit('slide', 'next')").projects-slider__button.projects-slider__button_next
-        a(@click.prevent="$emit('slide', 'prev')").projects-slider__button.projects-slider__button_prev
+        a(ref="#" @click.prevent="$emit('slide', 'next')" :class="{disabled: currentWorkId === worksLength}").projects-slider__button.projects-slider__button_next
+        a(href="#" @click.prevent="$emit('slide', 'prev')" :class="{disabled: currentWorkId === 1}").projects-slider__button.projects-slider__button_prev
 
 script(type="text/x-template")#slider-info
     .projects-slider__content
         tags(
-            :tags="tagsArray"
+            :tagsArray="tagsArray"
         )
         .projects-slider__text {{currentWork.title}}
         .projects-slider__message
@@ -50,5 +59,9 @@ script(type="text/x-template")#slider-info
 
 script(type="text/x-template")#slider-tags
     ul.links
-        li.links-item(v-for="tag in tags" :key="tag")
+        li.links-item(v-for="tag in tagsArray" :key="tag")
             .link {{tag}}
+
+
+
+

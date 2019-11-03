@@ -26,54 +26,57 @@
         section.section__skills
           .skills-card.section-block 
             form.skills__form.skill-form__heading 
-              input(placeholder="Название новой группы").skill__title.skill__title-edit
+              input(placeholder="Название новой группы" name="newgroup").skill__title.skill__title-edit
               .form__edit-buttons
                 button(type="submit").button.button__create 
                 button(type="reset").button.button__cancel 
 
             form.skills__form.skills__form-skill__new 
 
-              input(placeholder="Новый навык").new-skill
+              input(placeholder="Новый навык" name="newskill").new-skill
               input(type="number" min="0" max="100" step="5" placeholder="100%").skill__value
               button(type="submit").button.button__add-skill
             
           .skills-card.section-block 
               form.skills__form.skill-form__heading 
-                .skill__title Workflow
-                .form__edit-buttons
+                input(placeholder="Workflow" name="heading").skill__title 
+                .form__readmode-buttons
                   button(type="submit").button.button__edit
+                .form__editmode-buttons  
+                  button(type="submit").button.button__create 
+                  button(type="reset").button.button__cancel 
               
               form.skills__form.skills__form-skill__old
-                .old-skill Git
-                .skill__value.skill__value-percentage 100%
+                input(placeholder="Git" name="oldskill").old-skill
+                input(placeholder="100%" name="percentage").skill__value.skill__value-percentage
                 .form__edit-buttons
                   button(type="submit").button.button__edit
                   button(type="button").button.button__delete
               
               form.skills__form.skills__form-skill__old  
-                .old-skill Terminal
-                .skill__value.skill__value-percentage 90%
+                input(placeholder="Terminal" name="oldskill").old-skill 
+                input(placeholder="90%" name="percentage").skill__value.skill__value-percentage
                 .form__edit-buttons
                   button(type="submit").button.button__edit
                   button(type="button").button.button__delete
               
               form.skills__form.skills__form-skill__old  
-                .old-skill Gulp
-                .skill__value.skill__value-percentage 80%
+                input(placeholder="Gulp" name="oldskill").old-skill
+                input(placeholder="80%" name="percentage").skill__value.skill__value-percentage 
                 .form__edit-buttons
                   button(type="submit").button.button__edit
                   button(type="button").button.button__delete
 
               form.skills__form.skills__form-skill__old  
-                .old-skill Webpack
-                .skill__value.skill__value-percentage 85%
+                input(placeholder="Webpack" name="oldskill").old-skill
+                input(placeholder="85%" name="percentage").skill__value.skill__value-percentage 
                 .form__edit-buttons
                   button(type="submit").button.button__edit
                   button(type="button").button.button__delete     
               
               form.skills__form.skills__form-skill__new
                 input(required placeholder="Новый навык").new-skill
-                input(required type="number" placeholder="100%").skill__value
+                input(required type="number" placeholder="100%" name="percentage").skill__value
                 button(type="submit").button.button__add-skill
 
 
@@ -89,13 +92,13 @@
                 .button.button__submit загрузить
             .card__content
               label.card__label Название
-                input(required placeholder = "Дизайн сайта для авто салона Porsche").card__input
+                input(required placeholder = "Дизайн сайта для авто салона Porsche" name="title").card__input
               label.card__label Ссылка
-                input(required placeholder = "https://www.porsche-pulkovo.ru").card__input
+                input(required placeholder = "https://www.porsche-pulkovo.ru" name="link").card__input
               label.card__label Описание
-                textarea(required placeholder="Порше Центр Пулково...").card__textarea
+                textarea(required placeholder="Порше Центр Пулково..." name="description").card__textarea
               label.card__label Добавление тега
-                input(required placeholder = "Jquery, Vue.js, HTML5").card__input
+                input(required placeholder = "Jquery, Vue.js, HTML5" name="tag").card__input
               ul.card__taglist
                 li.card__tag
                   .card__description HTML
@@ -148,11 +151,11 @@
             .card__content
               .card__row
                 label.card__label.card__label-feedback Имя автора
-                  input( required placeholder = "Ковальчук Дмитрий").card__input.card__input-feedback
+                  input( required placeholder = "Ковальчук Дмитрий" name="fullname").card__input.card__input-feedback
                 label.card__label.card__label-feedback Титул автора
-                  input(required placeholder = "Основатель LoftSchool").card__input.card__input-feedback
+                  input(required placeholder = "Основатель LoftSchool" name="occupation").card__input.card__input-feedback
               label.card__label Отзыв
-                textarea( rows="5" required placeholder="Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 4,5 месяца только самых тяжелых испытаний и бессонных ночей!").card__textarea.card__textarea-feedback
+                textarea( rows="5" required placeholder="Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 4,5 месяца только самых тяжелых испытаний и бессонных ночей!" name="testimonial").card__textarea.card__textarea-feedback
             
               .card__buttons
                 button(type = "reset").card__reset Отмена
@@ -192,9 +195,9 @@
       form.form-login
         h2.form-login__heading Авторизация
         label.form-login__label.form-login__label-login Логин
-          input(type="text" placeholder="kokanewj" required).form-login__input
+          input(type="text" placeholder="kokanewj" required name="login").form-login__input
         label.form-login__label.form-login__label-password Пароль
-          input(type="text" placeholder="***" required).form-login__input
+          input(type="text" placeholder="***" required name="password").form-login__input
         button(type= "submit").button.button-login-submit Отправить
         button(type = "button").button.button-login-exit     
 </template>

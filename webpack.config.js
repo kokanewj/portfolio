@@ -9,7 +9,7 @@ const TerserPlugin = require("terser-webpack-plugin");
 
 module.exports = (env, argv) => {
   const isProductionBuild = argv.mode === "production";
-  const publicPath = './';
+  const publicPath = 'https://kokanewj.github.io/portfolio/';
 
   const pcss = {
     test: /\.(p|post|)css$/,
@@ -85,7 +85,7 @@ module.exports = (env, argv) => {
 
   const config = {
     entry: {
-      main: "./src/main.js",
+      main: ["@babel/polyfill", "./src/main.js"],
       admin: "./src/admin/main.js"
     },
     output: {

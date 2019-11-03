@@ -17,15 +17,24 @@ new Vue({
     reviews: [],
     flickityOptions: {
       initialIndex: 0,
-      prevNextButtons: false,
+      prevNextButtons: true,
       pageDots: false,
-      contain: true,
-      groupCells:true
+      wrapAround: false,
+      groupCells: true
 
       // any options from Flickity can be used
-    }
+    },
+    currentIndex: 0
   },
   methods: {
+    onInit() {
+      this.$refs.flickity.on('change', (event) => {
+        this.currentIndex = event
+
+        if (!this.$refs.flickity.$flickity.nextButton.isEnabled)
+          this.currentIndex = this.reviews.length
+      })
+    },
     makeArrWithRequiredImages(data) {
       return data.map(item => {
         const requiredPic = require(`../images/content/${item.avatar}`);
@@ -44,5 +53,12 @@ new Vue({
   created() {
     const data = require("../data/reviews.json");
     this.reviews = this.makeArrWithRequiredImages(data);
+  },
+  mounted() {
+    const items = document.querySelectorAll('.reviews__content-item')
+
+    items.forEach((item) => {
+      item.style.height = '100%'
+    })
   }
 });

@@ -3,7 +3,8 @@
     margin-left: 25px;
     color: #3f35cb;
     font-weight:600;
-    &:before{
+    outline:none;
+    &:before {
     content: "+";
     padding: 5px 8px;
     color: #fff;
@@ -17,12 +18,18 @@
     line-height: 1;
     transition: margin-right .3s;
     }
+        &:hover{
+        &:before{
+        margin-right: 20px;
+    }
+    }
 }
 
 .button__add-skill {
     background:transparent;
     background-size: contain;
     margin-left: 15px;
+    outline:none;
     &:before {
     content: "+";
     padding: 10px 17px;
@@ -34,28 +41,44 @@
     font-size: 30px;
     font-weight: 600;
     line-height: 1;
-    transition: margin-right .3s;
+    }
+        &:hover:before {
+        background: linear-gradient( 90deg, #006aed 60%, #3f35cb 100%);
+        transition: .3s;
     }
 }
 
 .button__create {
   height: 20px; 
   width: 20px; 
-  margin-right: 10px; 
+  margin-right: 15px; 
   background: svg-load('tick.svg', fill = #02d70c, width = 100%, height = 100% ) no-repeat center;
+  outline:none;
+  &:hover{
+background: svg-load('tick.svg', fill = #006400, width = 100%, height = 100% ) no-repeat center;
+    transition:.3s;
+  }
   }
 
 .button__cancel {
     height: 20px; 
     width: 20px; 
     background: svg-load('cross.svg', fill = #bf2929, width = 100%, height = 100% ) no-repeat center;
+    &:hover{
+    background: svg-load('cross.svg', fill = #800000, width = 100%, height = 100% ) no-repeat center;
+    transition:.3s;
     }
+}
 
 .button__edit {
     height: 20px; 
     width: 20px; 
     background: svg-load('pencil.svg', fill = #b4b8c1, width = 100%, height = 100% ) no-repeat center; 
     outline:none;
+    &:hover {
+        background: svg-load('pencil.svg', fill = #000, width = 100%, height = 100% ) no-repeat center;
+        transition:.3s;
+    }
     }
 
 .button__delete {
@@ -63,6 +86,11 @@
     width: 20px; 
     background: svg-load('trash.svg', fill = #b4b8c1, width = 100%, height = 100% ) no-repeat center; 
     margin-left: 10px;
+    outline:none;
+        &:hover {
+        background: svg-load('trash.svg', fill = #000, width = 100%, height = 100% ) no-repeat center;
+        transition:.3s;
+    }
     }
 
 .button__submit {
@@ -74,6 +102,10 @@
     margin: 0 auto; 
     cursor: pointer; 
     outline:none;
+        &:hover {
+        background: linear-gradient( 90deg, #006aed 40%, #3f35cb 100%);
+        transition: .3s;
+    }
     }
 
 .button__save {
@@ -92,6 +124,10 @@
     @include phones {
         margin: 0;
         } 
+    &:hover {
+    background: linear-gradient( 90deg, #006aed 40%, #3f35cb 100%);
+    transition: 0.3s;
+    }    
     }
 .button__pic {
   &:before {
@@ -112,8 +148,12 @@
 .button__card-edit {
     position:relative;
     outline:none;
-    color: ##7a8191;
-    font-weight: 600; 
+    color: #7a8191;
+    font-weight: 600;
+        &:hover{
+        color: #000;
+        transition: .3s;
+    } 
     &:after {
     content: ""; 
     position: absolute;
@@ -129,8 +169,12 @@
     position:relative; 
     margin-right: 20px; 
     outline:none; 
-    color: ##7a8191; 
+    color: #7a8191; 
     font-weight: 600; 
+    &:hover{
+        color: #000;
+        transition: .3s;
+    }
     &:after{
         content: ""; 
         position: absolute;
@@ -149,6 +193,10 @@
     cursor: pointer; 
     width: 100%; 
     text-align: center;
+    &:hover{
+        color: #000;
+        transition: .3s;
+    }
     }
 
 .button-login-exit {
@@ -158,6 +206,12 @@
     height: 15px; 
     width: 15px; 
     background: svg-load('cross.svg', fill = #454c5f, width = 100%, height = 100% ) no-repeat center;
+    outline:none;
+    &:hover{
+    height: 25px; 
+    width: 25px;
+    transition:.3s;
+    }
     }
 
 .button-login-submit  {
@@ -169,7 +223,14 @@
     text-transform: uppercase;
     transition: 0.3s;
     &:hover {
-        background: linear-gradient( 90deg, rgb(147,0,232) 60%, rgb(111,0,235) 100%);
+        background: linear-gradient( 90deg, #ad00ed 60%, #5500f2 100%);
         transition: 0.3s;
     }
+  }
+
+.form__readmode-buttons {
+      display:inline-block;
+  }
+.form__editmode-buttons {
+      display:none;
   }

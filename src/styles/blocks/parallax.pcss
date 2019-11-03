@@ -28,27 +28,28 @@
   }
   &:nth-child(2) {
     .parallax__image {
-      right: 0;
-      top: 370px;
+      width: 100%;
+      top: 20%;
     }
   }
   &:nth-child(3) {
     .parallax__image {
-      top: 500px;
+      width: auto;
+      top: 29%;
       left: 50%;
       margin-left: 17%;
     }
   }
   &:nth-child(4) {
     .parallax__image {
+     top: 34%;
       left: 0;
-      top: 560px;
     }
   }
   &:nth-child(5) {
     .parallax__image {
       left: 0;
-      top: 660px;
+      top: 30%;
       
       @include desktop() {
           top: 800px;
@@ -57,8 +58,8 @@
   }
   &:nth-child(6) {
     .parallax__image {
+      bottom: 5%;
       right: 0;
-      bottom: -300px;
     }
     @include desktop() {
     bottom: -100px;
@@ -67,7 +68,9 @@
   &:nth-child(7) {
     .parallax__image {
       left: 0;
-      bottom: -850px;
+      bottom: -50%;
+      height: 100%;
+      width: 100%;
     }
     @include desktop() {
     bottom: -500px;
@@ -77,4 +80,5 @@
 
 .parallax__image {
     position:absolute;
+      width: 100%;
 }

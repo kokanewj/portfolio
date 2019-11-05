@@ -35,9 +35,9 @@ html(lang="ru")
                     ul.menu__list
                       - var links = ['Главная', "Обо мне", "Навыки", "Работы", "Отзывы", "Связаться"];
                       - var anchors = ["#profile", "#info", "#achievements", "#projects", "#reviews", "#feedback"];
-                      each item in links 
+                      each item, index in links 
                         li.menu__item
-                          a(href="#").menu__link #{item}
+                          a(href=`${anchors[index]}`).menu__link #{item}
                 .header__socials
                   ul.socials
                     - var socials = ['insta', 'vk', 'github'];
@@ -76,8 +76,8 @@ html(lang="ru")
 
               .profile__welcome
                 .profile_welcome__text 
-                 p Личный сайт 
-                 p веб-разработчика
+                 span.profile_welcome__info Личный сайт 
+                 span.profile_welcome__info веб-разработчика
                 .profile_welcome__username Куаныш Ерсаханов
               .profile__button
                 a(href="").scroll__button Скролл                               

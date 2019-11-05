@@ -25,7 +25,6 @@
       padding: 0 25%;
       margin-bottom: 28%;
       @include desktop {
-      display: flex;
       flex-direction: row;
       align-items: flex-start;
 
@@ -34,7 +33,12 @@
       display: flex;
       flex-direction: column;
       text-align: center;
+      align-items:center;
       }
+    }
+    
+    &_welcome__info {
+    display:block;
     }
 
     &_welcome__text {
@@ -51,11 +55,10 @@
       }
       @include tablets {
       text-align: center;
-      padding: 0 26%;
       }
       @include phones {
-      font-size: 12px;
-      padding: 0 23%;
+      font-size: 13px;
+      margin-right: 0;
       }
     }
 

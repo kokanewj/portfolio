@@ -1,0 +1,43 @@
+.root-wrapper-container {
+    height: 100%;
+  }
+  
+  .root-container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+  
+  .admin-wrapper {
+    display: flex;
+  
+    .maincontent {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      min-height: 100vh;
+    }
+  }
+  
+  .content-container {
+    background: url("~images/background/balloon.png") center center no-repeat / cover;
+    flex: 1;
+    padding-top: 58px;
+  
+    @include phones {
+      padding-top: 30px;
+    }
+  }
+  
+  .page-title {
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 60px;
+  }
+  
+  .input-edit{
+    display:none;
+  }
+  .button {
+    background: transparent;
+  }

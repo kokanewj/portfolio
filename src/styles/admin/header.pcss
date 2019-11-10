@@ -1,17 +1,72 @@
-.header {
-    background: #44436c; 
-    color: #fff; 
-    padding: 20px 0; 
+.header-container {
+    background: linear-gradient(to right, #3e3e59, #454573);
+    padding: 15px 0;
+  
+    @include phones {
+      padding: 20px 0;
     }
-.container-header {
-    display: grid; 
-    align-items: center;
-    grid-template-columns: 1.25fr 1.25fr 3fr 1fr;
-    grid-template-rows: 1fr;
-    grid-template-areas: 'profile-pic panel-name . exit'}
+}
 
-.panel-name {
-    grid-area: panel-name; 
-    color: rgba(255, 255, 255, 0.5); 
-    font-size:14px;
+.header {
+    color: #fff;
+  }
+  
+  .header__information {
+    display: flex;
+    align-items: center;
+  }
+  
+  .header__title {
+    color: #fff;
+  
+    @include phones {
+      display: none;
     }
+  }
+  
+  .header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .user {
+    display: flex;
+    align-items: center;
+    margin-right: 20px;
+  }
+  
+  .user__name {
+    font-size: 18px;
+    font-weight: 600;
+  
+    .exit {
+      display: none;
+      @include phones {
+        display: block;
+      }
+    }
+  }
+  
+  .user__photo {
+    margin-right: 20px;
+    width: 43px;
+    height: 43px;
+    overflow: hidden;
+    flex-shrink: 0;
+    border-radius: 50%;
+  }
+  
+  .exit {
+    opacity: 0.5;
+    text-decoration: none;
+    font-size: 14px;
+  
+    &:hover {
+      text-decoration: underline;
+    }
+  
+    @include phones {
+      display: none;
+    }
+  }

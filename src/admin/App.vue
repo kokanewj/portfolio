@@ -1,221 +1,311 @@
 <template lang="pug">
-.wrapper
-  .wrapper__container
-    header.header
-      .container.container-header
-        .profile-pic
-          .profile-pic__photo
-            img(src="../images/content/me.jpg" class="profile-photo" alt="Аватар Куаныша")
-          .profile-pic__username Куаныш Ерсаханов
-        .panel-name Панель администрирования
-        a(href="#").login-exit Выйти
-    nav.tabs
-      .container.container-tabs
-        ul.tabs__list
-          li.tabs__item.tabs__item-active
-            a(href="#").tabs__link Обо мне
-          li.tabs__item
-            a(href="#").tabs__link  Работы
-          li.tabs__item
-            a(href="#").tabs__link Отзывы
-    main.maincontent
-      .container.container-maincontent
-        .section-heading
-          h1.section-heading__title Блок «Обо мне»
-          button(type='button').button.button__add-group Добавить группу
-        section.section__skills
-          .skills-card.section-block 
-            form.skills__form.skill-form__heading 
-              input(placeholder="Название новой группы" name="newgroup").skill__title.skill__title-edit
-              .form__edit-buttons
-                button(type="submit").button.button__create 
-                button(type="reset").button.button__cancel 
+  div.root-wrapper-container
+    div.root-container
+      header.header-container
+        .header
+          .container
+            .header__information
+              .user
+                .user__photo
+                  img(src="../images/content/me.jpg").user__photo-avatar
+                .user__fullname 
+                  span Ерсаханов Куаныш
+              .header__title Панель администрирования
+            a.exit Выйти
+        
+      section.tabs-container
+        .container
+          ul.tabs
+            - 
+              var userinformation = ['Обо мне', 'Работы', 'Отзывы'];
+            each item in userinformation
+              li.tabs__item
+                .tabs__link #{item}
+        
+      main.content-container
+        .about-page-container
+          .container
+            .about-page__title
+              h1.page-title Блок «Обо мне»
+              button.about-page__add-new Добавить группу
 
-            form.skills__form.skills__form-skill__new 
+          .about-page__content
+            .container
+              ul.skill-list
+                li.skill-list__item
+                  .add-new-skills-group
+                    .card
+                      .card__title
+                        .card__title-text
+                        .skills-card-title
+                          .skills-card-title__input
+                            label.input
+                              input(placeholder="Название новой группы").input__element.field__element
+                          .skills-card-title__buttons
+                              button(type="button").button.tick
+                              button(type="button").button.cross
+                      .card__content
+                        .add-new
+                          form.add-new-container.blocked
+                            .add-new__inputs
+                              .add-new__column
+                                label.input
+                                  input(placeholder="Новый навык").input__element.field__element
+                              .add-new__column.add-new__column_small
+                                label.input
+                                  input(type="type" min="0" max="100" step="5").input__element.field__element
+                              button(type="submit").add-new__button
+                        
+                li.skill-list__item
+                  .card
+                    .card__title
+                      .skills-title-container
+                        .skills-card-title
+                          .skills-card-title__text Workflow
+                          .skills-card-title__icon
+                            button(type="button").button.pencil
+                    .card__content
+                      .skill-list__table
+                        .skills-table-container
+                          table.skills
+                            tr.skills-row-wrapper
+                              td.skills__cell
+                                .skills__cell-input-wrapper
+                                  label.input
+                                    input.input__element.field__element
+                              td.skills__cell 
+                                .skills__cell-input-wrapper
+                                  label.input
+                                    input(type="number" min="0" max="100" maxlength="3").input__element.field__element
+                              td.skills__cell
+                                button(type="button").button.tick
+                              td.skills__cell
+                                button(type="button").button.cross
+                            tr.skills-row-wrapper
+                              td.skills__cell GIT
+                              td.skills__cell 
+                                .skills__input
+                                  .skills__input-text 100
+                              td.skills__cell
+                                button(type="button").button.pencil
+                              td.skills__cell
+                                button(type="button").button.trash
+                            tr.skills-row-wrapper
+                              td.skills__cell Terminal
+                              td.skills__cell 
+                                .skills__input
+                                  .skills__input-text 90
+                              td.skills__cell
+                                button(type="button").button.pencil
+                              td.skills__cell
+                                button(type="button").button.trash
+                            tr.skills-row-wrapper
+                              td.skills__cell Gulp
+                              td.skills__cell 
+                                .skills__input
+                                  .skills__input-text 80
+                              td.skills__cell
+                                button(type="button").button.pencil
+                              td.skills__cell
+                                button(type="button").button.trash 
+                            tr.skills-row-wrapper
+                              td.skills__cell Webpack
+                              td.skills__cell 
+                                .skills__input
+                                  .skills__input-text 85
+                              td.skills__cell
+                                button(type="button").button.pencil
+                              td.skills__cell
+                                button(type="button").button.trash    
+                      .add-new
+                        form.add-new-container
+                          .add-new__inputs
+                            .add-new__column
+                              label.input
+                                input(placeholder="Новый навык").input__element.field__element
+                            .add-new__column.add-new__column_small
+                              label.input
+                                input(type="number" min="0" max="100" maxlength="3" placeholder="100%").input__element.field__element
+                            button(type="submit").add-new__button
+        .works-section
+          .container
+              h1.page-title Блок «Работы»
+          .works-container
+            .container
+              .edit-form
+                .card
+                  .card__title
+                    .card__title-text Редактирование работы
+                  .card__content
+                    .edit-form__container
+                      .edit-form__column
+                        label.edit-form__picture
+                          .edit-form__picture-text
+                            | Перетащите или загрузите для загрузки изображения
+                          .button__file-form
+                            .button-file-fake.button-action Загрузить
+                            input(type="file")
+                      .edit-form__column
+                        .edit-form__row
+                          label.input.input_new
+                            .input__title Название
+                            input.input__element(placeholder="Дизайн сайта для автосалона Porsche").field__element
+                        .edit-form__row
+                          label.input.input_new
+                            .input__title Ссылка
+                            input.input__element(placeholder="https://www.porsche-pulkovo.ru").field__element
+                        .edit-form__row
+                          label.input.input_new
+                            .input__title Описание
+                            textarea.textarea__element(placeholder="Porsche Центр в Пулково").field__element
+                        .edit-form__row
+                          .add-tags
+                            .add-tags__wrapper
+                              label.input.input_new
+                                .input__title Добавление тега
+                                input.input__element(placeholder="JQuery, Vue.js, HTML5").field__element
+                            ul.tags
+                                li.tags__item.tags__item_new
+                                  span HTML
+                                  a.tags__remove
+                                li.tags__item.tags__item_new
+                                  span CSS
+                                  a.tags__remove
+                                li.tags__item.tags__item_new
+                                  span JavaScript
+                                  a.tags__remove  
+                    .edit-form__buttons
+                      .edit-form__buttons-item
+                        button(type="button").button-action.cancel Отмена
+                      .edit-form__buttons-item
+                        button(type="button").button-action Сохранить
 
-              input(placeholder="Новый навык" name="newskill").new-skill
-              input(type="number" min="0" max="100" step="5" placeholder="100%").skill__value
-              button(type="submit").button.button__add-skill
-            
-          .skills-card.section-block 
-              form.skills__form.skill-form__heading 
-                input(placeholder="Workflow" name="heading").skill__title 
-                .form__readmode-buttons
-                  button(type="submit").button.button__edit
-                .form__editmode-buttons  
-                  button(type="submit").button.button__create 
-                  button(type="reset").button.button__cancel 
-              
-              form.skills__form.skills__form-skill__old
-                input(placeholder="Git" name="oldskill").old-skill
-                input(placeholder="100%" name="percentage").skill__value.skill__value-percentage
-                .form__edit-buttons
-                  button(type="submit").button.button__edit
-                  button(type="button").button.button__delete
-              
-              form.skills__form.skills__form-skill__old  
-                input(placeholder="Terminal" name="oldskill").old-skill 
-                input(placeholder="90%" name="percentage").skill__value.skill__value-percentage
-                .form__edit-buttons
-                  button(type="submit").button.button__edit
-                  button(type="button").button.button__delete
-              
-              form.skills__form.skills__form-skill__old  
-                input(placeholder="Gulp" name="oldskill").old-skill
-                input(placeholder="80%" name="percentage").skill__value.skill__value-percentage 
-                .form__edit-buttons
-                  button(type="submit").button.button__edit
-                  button(type="button").button.button__delete
+              ul.works
+                li.works__item
+                  button(type="button").button-container
+                    .button__text
+                      .button__sign
+                      .button__title Добавить работу
+                li.works__item
+                  .card
+                    .works__wrapper
+                      .works__photo
+                        img(src="../images/content/slider-1.jpg").works__image
+                        .works__tag
+                          ul.tags
+                            li.tags__item HTML
+                            li.tags__item CSS
+                            li.tags__item JavaScript
+                      .works__data
+                        .works__title Сайт школы онлайн образования
+                        .works__text
+                          p Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 2 месяца только самых тяжелых испытаний и бессонных ночей!
+                        a(href="#").works__link http://loftschool.ru
+                        .works__buttons
+                          button(type="button").button.pencil Править
+                          button(type="button").button.cross Удалить
+        .reviews-section
+          .container
+            h1.page-title Блок «Отзывы»
+          .reviews-container
+            .container
+              .edit-form
+                .card
+                  .card__title
+                    .card__title-text Новый отзыв
+                  .card__content
+                    .edit-form__container.edit-form__container_reviews
+                      .edit-form__column
+                        label.edit-form__form-avatar-upload
+                          input(type="file").edit-form__form-file-input
+                          .edit-form__form-photo
+                            .edit-form__form-avatar
+                          .edit-form__form-addphoto Добавить фото
+                      .edit-form__column
+                        .edit-form__row
+                          .edit-form__form-block
+                            label.input.input_new
+                              .input__title Имя автора
+                              input.input__element(placeholder="Ковальчук Дмитрий").field__element
+                          .edit-form__form-block
+                            .label.input.input_new
+                              .input__title Титул автора
+                              input.input__element(placeholder="Основатель LoftSchool").field__element
+                        .edit-form__row
+                          .edit-form__form-block
+                            label.input.input_new
+                              .input__title Отзыв
+                              textarea.textarea__element(placeholder="Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 2 месяца только самых тяжелых испытаний и бессонных ночей!").field__element
+                    .edit-form__buttons
+                      .edit-form__buttons-item
+                        button(type="button").button-action.cancel Отмена
+                      .edit-form__buttons-item
+                        button(type="button").button-action Сохранить
 
-              form.skills__form.skills__form-skill__old  
-                input(placeholder="Webpack" name="oldskill").old-skill
-                input(placeholder="85%" name="percentage").skill__value.skill__value-percentage 
-                .form__edit-buttons
-                  button(type="submit").button.button__edit
-                  button(type="button").button.button__delete     
-              
-              form.skills__form.skills__form-skill__new
-                input(required placeholder="Новый навык").new-skill
-                input(required type="number" placeholder="100%" name="percentage").skill__value
-                button(type="submit").button.button__add-skill
+              ul.reviews
+                li.reviews__item
+                  button(type="button").button-container
+                    .button__text
+                      .button__sign
+                      .button__title Добавить отзыв
+                li.reviews__item
+                  .card
+                    .card__title
+                      .card__title-text
+                        .user
+                          .user__avatar
+                            img(src="../images/content/feedback-1.png").user__avatar-photo 
+                          .user__desc
+                            .user__fullname Ковальчук Дмитрий
+                            .user__position Основатель Loftschool
+                    .card__content
+                      .reviews__content
+                        .reviews__content-text
+                          p Этот парень проходил обучение веб-разработке не где-то, а в Loftschool! 4,5 месяца только самых тяжелых испытаний и бессонных ночей!
+                        .reviews__buttons
+                          button(type="button").button.pencil Править
+                          button(type="button").button.cross Удалить
 
-
-            
-        section.section__works
-          h1.section-heading__title Блок «Работы»
-          form.section-block.card.card-works 
-            h2.card__name Редактирование работы
-            .card__download-area
-              input.input-file(type="file" required name="file" id="file") 
-              label.input-file__label(for="file")
-                .input-file__text Перетащите или загрузите для загрузки изображения
-                .button.button__submit загрузить
-            .card__content
-              label.card__label Название
-                input(required placeholder = "Дизайн сайта для авто салона Porsche" name="title").card__input
-              label.card__label Ссылка
-                input(required placeholder = "https://www.porsche-pulkovo.ru" name="link").card__input
-              label.card__label Описание
-                textarea(required placeholder="Порше Центр Пулково..." name="description").card__textarea
-              label.card__label Добавление тега
-                input(required placeholder = "Jquery, Vue.js, HTML5" name="tag").card__input
-              ul.card__taglist
-                li.card__tag
-                  .card__description HTML
-                  button(type="button").button.card__cross 
-                li.card__tag
-                  .card__description CSS
-                  button(type="button").button.card__cross 
-                li.card__tag
-                  .card__description Javascript
-                  button(type="button").button.card__cross 
-              .card__buttons
-                button(type = "reset").card__reset Отмена
-                button(type = "submit").button.button__submit.button__save сохранить
-          .blocks-edit
-            button.button.button__add-card
-              .button__pic
-              .button__name Добавить работу
-            .section-block.card-edit
-              .card-edit__picture-box
-                img(src='../images/content/slider-1.jpg').card-edit__picture
-              .card-edit__description
-                .card-edit__name Сайт школы образования
-                .card-edit__text Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 4,5 месяца только самых тяжелых испытаний и бессонных ночей!
-                a(href="#").card-edit__link http://loftschool.ru
-                .card-edit__buttons
-                  button(type="button").button.button__card-edit Править
-                  button(type="button").button.button__card-delete Удалить
-            .section-block.card-edit
-              .card-edit__picture-box
-                img(src='../images/content/slider-2.jpg').card-edit__picture
-              .card-edit__description
-                .card-edit__name Сайт школы образования
-                .card-edit__text Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 4,5 месяца только самых тяжелых испытаний и бессонных ночей!
-                a(href="#").card-edit__link http://loftschool.ru
-                .card-edit__buttons
-                  button(type="button").button.button__card-edit Править
-                  button(type="button").button.button__card-delete Удалить
-
-
-        section.section__feedback
-          h1.section-heading__title Блок «Отзывы»
-          form.section-block.card.card-feedback
-            h2.card__name Добавить отзыв
-            .card__download-area.card__download-area-feedback
-              input.input-file(type="file" required name="file" id="profile-pic") 
-              label.input-file__label(for="profile-pic")
-                .profile-pic-avatar
-              
-                .button.button__add-photo Добавить фото
-            .card__content
-              .card__row
-                label.card__label.card__label-feedback Имя автора
-                  input( required placeholder = "Ковальчук Дмитрий" name="fullname").card__input.card__input-feedback
-                label.card__label.card__label-feedback Титул автора
-                  input(required placeholder = "Основатель LoftSchool" name="occupation").card__input.card__input-feedback
-              label.card__label Отзыв
-                textarea( rows="5" required placeholder="Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 4,5 месяца только самых тяжелых испытаний и бессонных ночей!" name="testimonial").card__textarea.card__textarea-feedback
-            
-              .card__buttons
-                button(type = "reset").card__reset Отмена
-                button(type = "submit").button.button__submit.button__save сохранить
-
-          .blocks-edit
-            button.button.button__add-card
-              .button__pic
-              .button__name Добавить отзыв
-            .section-block.card-edit.card-edit-feedback
-              .card-edit__reviewer-info
-                .card-edit__reviewer-picture-box
-                  img(src='../images/content/feedback-1.png').card-edit__reviewer-picture
-                .card-edit__reviewer-text
-                  .card-edit__reviewer-name Ковальчук Дмитрий
-                  .card-edit__reviewer-position Основатель LoftSchool          
-              .card-edit__description.card-edit__description-feedback  
-                .card-edit__text Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 4,5 месяца только самых тяжелых испытаний и бессонных ночей!           
-                .card-edit__buttons
-                  button(type="button").button.button__card-edit Править
-                  button(type="button").button.button__card-delete Удалить
-            .section-block.card-edit.card-edit-feedback
-              .card-edit__reviewer-info
-                .card-edit__reviewer-picture-box
-                  img(src='../images/content/feedback-2.png').card-edit__reviewer-picture
-                .card-edit__reviewer-text
-                  .card-edit__reviewer-name Владимир Сабанцев
-                  .card-edit__reviewer-position Преподаватель          
-              .card-edit__description.card-edit__description-feedback  
-                .card-edit__text Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 4,5 месяца только самых тяжелых испытаний и бессонных ночей!           
-                .card-edit__buttons
-                  button(type="button").button.button__card-edit Править
-                  button(type="button").button.button__card-delete Удалить
-
-  .login
-    .container.container-login
-      form.form-login
-        h2.form-login__heading Авторизация
-        label.form-login__label.form-login__label-login Логин
-          input(type="text" placeholder="kokanewj" required name="login").form-login__input
-        label.form-login__label.form-login__label-password Пароль
-          input(type="text" placeholder="***" required name="password").form-login__input
-        button(type= "submit").button.button-login-submit Отправить
-        button(type = "button").button.button-login-exit     
+      .login
+        .login__content
+          form.login__form
+            .login__form-title Авторизация
+            button.login__form-close
+            .login__row
+              label.input
+                .input__title Логин
+                input(type="text" title="Логин").input__element.field__element
+            .login__row
+              label.input
+                .input__title Пароль
+                input(type="password" title="Пароль").input__element.field__element
+            .login__button
+              button(type="submit").login__submit Отправить
 </template>
 
-<style lang = "postcss">
+
+
+
+<style lang="pcss">
 @import url("https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800");
 @import "normalize.css";
 @import "../styles/mixins.pcss";
 @import "../styles/layout/base.pcss";
-@import "../styles/admin/admin-base.pcss";
-@import "../styles/admin/block.pcss";
+@import "../styles/admin/about.pcss";
+@import "../styles/admin/add-skill.pcss";
+@import "../styles/admin/base-admin.pcss";
 @import "../styles/admin/button.pcss";
-@import "../styles/admin/card.pcss";  
+@import "../styles/admin/card.pcss";
+@import "../styles/admin/edit-form.pcss"; 
 @import "../styles/admin/header.pcss";
-@import "../styles/admin/inputfile.pcss";
-@import "../styles/admin/login.pcss"; 
-@import "../styles/admin/profile.pcss";
-@import "../styles/admin/section.pcss";
-@import "../styles/admin/skill.pcss";   
-@import "../styles/admin/tabs.pcss";             
+@import "../styles/admin/input.pcss";  
+@import "../styles/admin/login.pcss";
+@import "../styles/admin/reviews.pcss"; 
+@import "../styles/admin/skill-card.pcss";
+@import "../styles/admin/skill-list.pcss";  
+@import "../styles/admin/skills.pcss";
+@import "../styles/admin/tabs.pcss";
+@import "../styles/admin/tags.pcss";
+@import "../styles/admin/user-reviews.pcss";
+@import "../styles/admin/works.pcss";
 </style>

@@ -1,0 +1,48 @@
+.skills{
+    width: 100%
+}
+.skills-row-wrapper {
+    &.blocked {
+      opacity: 0.5;
+      pointer-events: none;
+      filter: grayscale(100%);
+    }
+  }
+  .skills__cell {
+    padding-bottom: 4px;
+    &:first-child {
+      width: 60%;
+    }
+  }
+  
+  .skills__input-wrapper {
+    width: 100px;
+  }
+  
+  .skills__input {
+    white-space: nowrap;
+    position: relative;
+    margin-right: 50px;
+    display: inline-flex;
+    &:before {
+      content: "%";
+      position: absolute;
+      right: 10px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: #404c62;
+      opacity: 0.7;
+    }
+  }
+  
+  .skills__input-text {
+    width: 75px;
+    background: transparent;
+    border: none;
+    padding: 10px 15px 8px 10px;
+    position: relative;
+  }
+  
+  .skills__cell-input-wrapper {
+    margin-right: 22px;
+  }

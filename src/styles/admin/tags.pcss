@@ -1,0 +1,33 @@
+.add-tags__wrapper {
+    margin-bottom: 20px;
+  }
+  
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .tags__remove {
+    width: 12px;
+    height: 12px;
+    background: svg-load('cross.svg', fill=$text-color) center center no-repeat / contain;
+    margin-left: 9px;
+  }
+  
+  .tags__item {
+    color: #283240;
+    margin-right: 8px;
+    margin-bottom: 8px;
+    border-radius: 50px;
+    background: #fff;
+    font-size: 15px;
+    padding: 6px 20px;
+
+  
+    &_new {
+      display: flex;
+      align-items: center;
+      background-color: #f4f4f4;
+      cursor:pointer;
+    }
+  }

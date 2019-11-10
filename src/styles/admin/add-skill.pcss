@@ -1,0 +1,81 @@
+.add-new {
+    padding-left: 19%;
+    margin-top: auto;
+    position: relative;
+
+    @include phones {
+        padding-left: 0;
+    }
+}
+.add-new-skills-group{
+    height: 100%;
+}
+.add-new-container {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+
+    &.blocked {
+        opacity: 0.3;
+        pointer-events: none;
+
+        &:after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+        }
+    }
+}
+
+.add-new__inputs {
+    display: flex;
+    width: 100%;
+}
+
+.add-new__column {
+    margin-right: 10px;
+    flex: 1;
+
+    &:last-child {
+        margin-right: 0;
+    }
+
+    &_small {
+        width: 75px;
+        flex: initial;
+    }
+}
+
+.add-new__button {
+    width: 40px;
+    height: 40px;
+    position: relative;
+    padding: 0;
+    overflow: hidden;
+    display: block;
+    margin-left: 34px;
+    flex-shrink: 0;
+    outline:none;
+    background: linear-gradient(to right, #006aed 20%, #3f35cb 100%) center center;
+    border-radius: 50%;
+
+
+    &:hover{
+    background: linear-gradient(to right, #006aed 50%, #3f35cb 100%) center center;    
+    }
+
+    &:before {
+        content:"+";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        font-size: 30px;
+        color: #fff;
+        font-weight: 600;
+        line-height: 40px;
+        transform: translate(-50%, -50%);
+    }
+}

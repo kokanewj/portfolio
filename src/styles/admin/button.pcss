@@ -1,236 +1,177 @@
-.button__add-group {
-    position: relative; 
-    margin-left: 25px;
-    color: #3f35cb;
-    font-weight:600;
-    outline:none;
-    &:before {
-    content: "+";
-    padding: 5px 8px;
+.button__file-form {
+    overflow: hidden;
+    position: relative;
+}
+
+.button-action {
     color: #fff;
+    text-transform: uppercase;
+    padding: 21px 42px;
+    background: linear-gradient(to right, #006aed 20%, #3f35cb 100%) center center;  
     display: inline-block;
-    background-image: linear-gradient(90deg,#006aed,#3f35cb);
-    border-radius: 50%;
-    margin-right: 12px;
-    flex-shrink: 0;
-    font-size: 15px;
-    font-weight: 600;
-    line-height: 1;
-    transition: margin-right .3s;
-    }
-        &:hover{
-        &:before{
-        margin-right: 20px;
-    }
-    }
-}
+    border-radius: 100px;
+    font-weight: bold;
 
-.button__add-skill {
-    background:transparent;
-    background-size: contain;
-    margin-left: 15px;
-    outline:none;
-    &:before {
-    content: "+";
-    padding: 10px 17px;
-    color: #fff;
-    display: inline-block;
-    background-image: linear-gradient(90deg,#006aed,#3f35cb);
-    border-radius: 50%;
-    flex-shrink: 0;
-    font-size: 30px;
-    font-weight: 600;
-    line-height: 1;
-    }
-        &:hover:before {
-        background: linear-gradient( 90deg, #006aed 60%, #3f35cb 100%);
-        transition: .3s;
-    }
-}
-
-.button__create {
-  height: 20px; 
-  width: 20px; 
-  margin-right: 15px; 
-  background: svg-load('tick.svg', fill = #02d70c, width = 100%, height = 100% ) no-repeat center;
-  outline:none;
-  &:hover{
-background: svg-load('tick.svg', fill = #006400, width = 100%, height = 100% ) no-repeat center;
-    transition:.3s;
-  }
-  }
-
-.button__cancel {
-    height: 20px; 
-    width: 20px; 
-    background: svg-load('cross.svg', fill = #bf2929, width = 100%, height = 100% ) no-repeat center;
     &:hover{
-    background: svg-load('cross.svg', fill = #800000, width = 100%, height = 100% ) no-repeat center;
-    transition:.3s;
-    }
-}
-
-.button__edit {
-    height: 20px; 
-    width: 20px; 
-    background: svg-load('pencil.svg', fill = #b4b8c1, width = 100%, height = 100% ) no-repeat center; 
-    outline:none;
-    &:hover {
-        background: svg-load('pencil.svg', fill = #000, width = 100%, height = 100% ) no-repeat center;
-        transition:.3s;
-    }
+    background: linear-gradient(to right, #006aed 50%, #3f35cb 100%) center center;  
     }
 
-.button__delete {
-    height: 20px; 
-    width: 20px; 
-    background: svg-load('trash.svg', fill = #b4b8c1, width = 100%, height = 100% ) no-repeat center; 
-    margin-left: 10px;
-    outline:none;
-        &:hover {
-        background: svg-load('trash.svg', fill = #000, width = 100%, height = 100% ) no-repeat center;
-        transition:.3s;
-    }
+    &.disabled {
+        opacity: .5;
+        pointer-events: none;
+        user-select: none;
     }
 
-.button__submit {
-    background-image: linear-gradient(90deg,#006aed,#3f35cb); 
-    color:#fff; 
-    padding: 20px 30px; 
-    border-radius: 35px;  
-    text-transform: uppercase; 
-    margin: 0 auto; 
-    cursor: pointer; 
-    outline:none;
-        &:hover {
-        background: linear-gradient( 90deg, #006aed 40%, #3f35cb 100%);
-        transition: .3s;
-    }
-    }
-
-.button__save {
-    margin: 0 0; 
-    margin-left: 20px; 
-    font-weight:600;
-    }
-
-.button__add-card {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center; margin: 10px; padding: 30px; 
-    background-image: linear-gradient(90deg,#006aed,#3f35cb); 
-    color:#fff; 
-    @include phones {
-        margin: 0;
-        } 
-    &:hover {
-    background: linear-gradient( 90deg, #006aed 40%, #3f35cb 100%);
-    transition: 0.3s;
-    }    
-    }
-.button__pic {
-  &:before {
-  content: "+"; 
-  border-radius: 50%; 
-  font-size: 60px; 
-  border: 2px solid #fff; 
-  width: 150px; 
-  margin: 0 auto; 
-  height: 150px;     
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 20px;
-    }
-}
-
-.button__card-edit {
-    position:relative;
-    outline:none;
-    color: #7a8191;
-    font-weight: 600;
+    &.cancel {
+        text-transform: initial;
+        color: $links-color;
+        background: transparent;
+        outline:none;
         &:hover{
-        color: #000;
-        transition: .3s;
-    } 
-    &:after {
-    content: ""; 
-    position: absolute;
-    margin-left: 5px;
-    bottom: 3px;
-    height: 15px;
-    width: 15px; 
-    background: svg-load('pencil.svg', fill = #383bcf, width = 100%, height = 100% ) no-repeat center
-    }
-}
-
-.button__card-delete {
-    position:relative; 
-    margin-right: 20px; 
-    outline:none; 
-    color: #7a8191; 
-    font-weight: 600; 
-    &:hover{
-        color: #000;
-        transition: .3s;
-    }
-    &:after{
-        content: ""; 
-        position: absolute;
-        margin-left: 5px;
-        bottom: 3px;
-        height: 15px;
-        width: 15px; 
-        background: svg-load('cross.svg', fill = #c92e2e, width = 100%, height = 100% ) no-repeat center
+            color:#000;
         }
     }
+}
 
-.button__add-photo {
-    color: #383bcf; 
-    margin-top: 30px; 
-    font-weight: 600; 
-    cursor: pointer; 
-    width: 100%; 
-    text-align: center;
-    &:hover{
-        color: #000;
-        transition: .3s;
-    }
-    }
 
-.button-login-exit {
-    position: absolute; 
-    top: 15px; 
-    right: 15px; 
-    height: 15px; 
-    width: 15px; 
-    background: svg-load('cross.svg', fill = #454c5f, width = 100%, height = 100% ) no-repeat center;
-    outline:none;
-    &:hover{
-    height: 25px; 
-    width: 25px;
-    transition:.3s;
-    }
-    }
+.button-container {
+    background: linear-gradient(to right, #006aed 20%, #3f35cb 100%) center center;  
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 0;
 
-.button-login-submit  {
-    border-radius: 40px 5px;
-    background-image: linear-gradient(90deg,#ad00ed,#5500f2);
-    padding: 30px 120px;
+  &:hover{
+    background: linear-gradient(to right, #006aed 50%, #3f35cb 100%) center center;  
+  }
+  
+    @include phones {
+      height: 115px;
+      justify-content: flex-start;
+      padding-left: 20px;
+    }
+  }
+  
+  .button__sign {
+    display: block;
+    position: relative;
+    width: 165px;
+    height: 165px;
+    border-radius: 50%;
+    border: 2px solid #fff;
+    margin-bottom: 30px;
+  
+    &:before {
+      content: "+";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      font-size: 72px;
+      font-weight: 300;
+      color: #fff;
+      transform: translate(-50%, -50%);
+      @include phones {
+        font-size: 24px;
+      }
+    }
+  
+    @include phones {
+      width: 52px;
+      height: 52px;
+      margin-bottom: 0;
+      margin-right: 20px;
+    }
+  }
+  
+  .button__text {
+    @include phones {
+      display: flex;
+      align-items: center;
+    }
+  }
+  
+  .button__title {
+    font-size: 18px;
     color: #fff;
-    font-weight:700;
-    text-transform: uppercase;
-    transition: 0.3s;
-    &:hover {
-        background: linear-gradient( 90deg, #ad00ed 60%, #5500f2 100%);
-        transition: 0.3s;
+    font-weight: bold;
+    @include phones {
+      font-size: 16px;
     }
   }
 
-.form__readmode-buttons {
-      display:inline-block;
-  }
-.form__editmode-buttons {
-      display:none;
-  }
+.button {
+    display: inline-flex;
+    align-items: center;
+    padding: 0;
+
+    &:before {
+        content: "";
+        font-weight: 600;
+        color: #414b61;
+        margin-right: 20px;
+    }
+
+    &:after {
+        content: "";
+        width: 18px;
+        height: 18px;
+        display: block;
+    }
+}
+
+.pencil{
+    outline:none;
+    &:after {
+        margin-left:10px;
+        background: svg-load("pencil.svg", fill="$links-color") center center no-repeat / contain;  
+    }
+    &:hover {
+        &:after {
+                background: svg-load("pencil.svg", fill="#000") center center no-repeat / contain;
+        }
+    }      
+}
+
+.cross{
+    outline:none;
+    &:after {
+        margin-left:10px;
+        background: svg-load("cross.svg", fill="red") center center no-repeat / contain;  
+    }
+    &:hover {
+        &:after {
+                background: svg-load("cross.svg", fill="#000") center center no-repeat / contain;
+        }
+    }      
+}
+
+
+.tick{
+    outline:none;
+    &:after {
+        margin-left:10px;
+        background: svg-load("tick.svg", fill="green") center center no-repeat / contain;  
+    }
+    &:hover {
+        &:after {
+                background: svg-load("tick.svg", fill="#000") center center no-repeat / contain;
+        }
+    }      
+}
+
+
+.trash {
+    outline:none;
+    &:after {
+        margin-left:10px;
+        background: svg-load("trash.svg", fill="#ccc") center center no-repeat / contain;  
+    }
+    &:hover {
+        &:after {
+                background: svg-load("trash.svg", fill="#000") center center no-repeat / contain;
+        }
+    }      
+}
+

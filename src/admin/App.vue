@@ -1,9 +1,7 @@
 <template lang="pug">
   div.root-wrapper-container
     div.root-container
-      template(v-if="$route.meta.public")
-        router-view
-      template(v-else-if="userIsLogged")
+      template
         header.header-container
           app-header
         section.tabs-container
@@ -12,26 +10,73 @@
           router-view
 </template>
 
+<script>
+import { mapState, mapActions, mapGetters } from "vuex";
+export default {
+  components: {
+    appHeader: () => import("components/header"),
+    tabs: () => import("components/tabs")
+  }
+};
+</script>
+
+
 <style lang="pcss">
-@import url("https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800");
 @import "normalize.css";
 @import "../styles/mixins.pcss";
 @import "../styles/layout/base.pcss";
-@import "../styles/admin/about.pcss";
-@import "../styles/admin/add-skill.pcss";
-@import "../styles/admin/base-admin.pcss";
-@import "../styles/admin/button.pcss";
-@import "../styles/admin/card.pcss";
-@import "../styles/admin/edit-form.pcss"; 
-@import "../styles/admin/header.pcss";
-@import "../styles/admin/input.pcss";  
-@import "../styles/admin/login.pcss";
-@import "../styles/admin/reviews.pcss"; 
-@import "../styles/admin/skill-card.pcss";
-@import "../styles/admin/skill-list.pcss";  
-@import "../styles/admin/skills.pcss";
-@import "../styles/admin/tabs.pcss";
-@import "../styles/admin/tags.pcss";
-@import "../styles/admin/user-reviews.pcss";
-@import "../styles/admin/works.pcss";
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800");
+
+button {
+  border-color: rgb(216, 216, 216) rgb(209, 209, 209) rgb(186, 186, 186);
+  border-style: solid;
+  border-width: 1px;
+  background-color: buttonface;
+}
+.root-wrapper-container {
+  height: 100%;
+}
+
+.header-container {
+  background: linear-gradient(to right, #3e3e59, #454573);
+  padding: 15px 0;
+
+  @include phones {
+    padding: 20px 0;
+  }
+}
+
+.root-container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.admin-wrapper {
+  display: flex;
+
+  .maincontent {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+}
+
+.content-container {
+  background: url("~images/background/balloon.png") center center no-repeat / cover;
+  flex: 1;
+  padding-top: 60px;
+
+  @include phones {
+    padding-top: 30px;
+  }
+}
+
+.page-title {
+  margin-bottom: 60px;
+  font-size: 21px;
+  font-weight: bold;
+}
 </style>
+

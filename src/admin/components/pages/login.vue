@@ -1,7 +1,7 @@
 <template lang="pug">
   .login
     .login__content
-      a(href="/").close-button
+      a(href="/portfolio").close-button
       form.login__form(@submit.prevent="login")
         .login__form-title Авторизация
         .login__row

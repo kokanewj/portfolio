@@ -1,0 +1,121 @@
+.skill__input {
+  outline:none;
+  pointer-events: none;
+}
+
+.skill__row {
+  &__edit {
+    .skill__column__title {
+      border-bottom: 1px solid #000;
+    }
+
+    .skill__column__percent {
+      border-bottom: 1px solid #000;
+    }
+
+    .skill__edit-mode-buttons {
+      display: inline-block;
+    }
+
+    .skill__read-mode-buttons {
+      display: none;
+    }
+
+    .skill__input {
+      outline:none;
+      pointer-events: auto;
+    }
+  }
+}
+
+.skill__column {
+  padding-top: 17px;
+  padding-bottom: 5px;
+
+  &__title {
+    width: 60%;
+  }
+
+  &__percent {
+    width: 45px;
+  }
+
+  &__buttons {
+    display: flex;
+    justify-content: flex-end;
+  }
+}
+
+.skill__input {
+  font-size: 16px;
+  color: #000;
+  border: none;
+  outline:none;
+
+  &__table {
+    width: 100%;
+  }
+
+  &__new-title-wrapper {
+    position: relative;
+    margin-right: 12px;
+
+    &.error {
+      .skill__input-error {
+        display: block;
+      }
+    }
+  }
+
+  &__new-title {
+    width: 100%;
+    border-bottom: 1px solid #000;
+    padding-bottom: 12px;
+    margin-right: 10px;
+    padding-left: 10px;
+  }
+
+  &__new-percent {
+    width: 100%;
+  }
+}
+
+.skill__input-error {
+  position: absolute;
+  top: 100%;
+  z-index: 100;
+  display: none;
+}
+
+.skill__percent-block {
+  display: flex;
+  align-items: center;
+  position: relative;
+
+  &__new-skill {
+    width: 45px;
+    border-bottom: 1px solid #000;
+    margin-right: 30px;
+    padding-bottom: 10px;
+  }
+
+  &.error {
+    .skill__input-error {
+      display: block;
+    }
+  }
+}
+
+.skill__percent-prefix {
+  font-family: inherit;
+  font-size: 16px;
+  color: #7a8292;
+}
+
+.skill__edit-mode-buttons {
+  display: none;
+}
+
+.skill__read-mode-buttons {
+  display: inline-block;
+}

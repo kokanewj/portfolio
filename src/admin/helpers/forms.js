@@ -1,4 +1,4 @@
-export const wrapIntoFormData = plainObject => {
+export const outputFormData = plainObject => {
   const formData = new FormData();
 
   Object.keys(plainObject).forEach(key => {

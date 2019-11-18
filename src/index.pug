@@ -120,12 +120,11 @@ html(lang="ru")
                     .achievements__message
                       p Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
                 .achievements__skills
-                  #skills-component
+                  #skills-root
           section.projects#projects
             .container.projects__container
-              .projects__title Мои работы
               .projects__content
-                #slider-component
+                #works-root
           .triangles.triangles_under
             svg(viewBox="0 0 1000 100" preserveAspectRatio="none").triangles__shape.triangles__shape_left
               polygon(points="0,0 1000,0 1000,100")
@@ -152,9 +151,11 @@ html(lang="ru")
           .footer__information
             nav.menu.footer__menu
               ul.menu__list
-                each item in links 
-                  li.menu__item
-                    a(href="#").menu__link #{item}
+                - var links = ['Главная', "Обо мне", "Навыки", "Работы", "Отзывы", "Связаться"];
+                - var anchors = ["#profile", "#info", "#achievements", "#projects", "#reviews", "#feedback"];
+                  each item, index in links 
+                    li.menu__item
+                      a(href=`${anchors[index]}`).menu__link #{item}
             .footer__information_details
               .footer__information_left
                 .footer__information_text

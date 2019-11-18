@@ -1,28 +1,36 @@
-script(type="text/x-template")#skills-list                  
-    .achievements__skills-container
-        ul.user-skills
-            li.user-skills__item(v-for="skill in skills" :key="skill.skillsGroup")
-                skills-row(
-                    :skill="skill"
-                )
+script(type="text/x-template")#skills-template
+  section.skills#skills
+    .container.skills__container
+        .skills__content
+          ul.skills__stack-list
+            li.skills__stack-item(v-for="category in categories" :key="category.id")
+              stackRow(
+                :category="category"
+                :skills="filterSkillsByCategory(category.id)"
+              )
 
+script(type="text/x-template")#stack-row-template
+  .stack-row
+    h3.stack-row__title {{category.category}}
+    ul.stack-row__list
+      li.stack-row__item(v-for="skill in skills" :key="skill.id")
+        skill(
+          :skill="skill"
+        )
 
-script(type="text/x-template")#skills-row
-    .skills-row
-        .skills-row__title {{skill.skillsGroup}}
-        ul.skills-row__list
-            li.skills-row__item(v-for="(skillPercent, skillName) in skill.skills")
-                skill(
-                    :skillName="skillName"
-                    :skillPercent="skillPercent"
-                )
-
-script(type="text/x-template")#skill            
-    .skill
-        svg(viewBox="0 0 100 100").skill__shape
-            circle(cx="50" cy="50" r="40").skill__circle.skill__circle--position--under
-            circle(cx="50" cy="50" r="40" ref="color-circle" stroke="url(#gradient)" transform='rotate(180 50 50)').skill__circle.skill__circle--position--above       
-            linearGradient(id="gradient" x1="0%" y1="0%" x2="100%" y2="0")
-                stop(offset="0%" stop-color="#5500f2")
-                stop(offset="100%" stop-color="#ad00ed")
-        .skill__title {{skillName}}
+script(type="text/x-template")#skill-template
+  .skill
+    .skill__wrapper
+      svg.skill__chart(viewBox="0 0 100 100" preserveAspectRatio="none")
+        defs
+          linearGradient#circle-gradient(x1="0%" y1="0%" x2="0%" y2="100%")
+            stop(offset="0%" stop-color="#5500f2")
+            stop(offset="100%" stop-color="#ad00ed")
+        circle.skill__circle.skill__circle--under(cx="50" cy="50" r="40")
+        circle.skill__circle.skill__circle--above(
+            cx="50" cy="50" r="40"
+            ref="color-circle"
+            stroke="url(#circle-gradient)"
+            transform='rotate(180 50 50)'
+          )
+      span.skill__title {{skill.title}}

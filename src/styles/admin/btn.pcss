@@ -1,0 +1,351 @@
+.button {
+
+  &__add-skills-group {
+    display: flex;
+    align-items: center;
+    border:none;
+    outline:none;
+    font-weight: 600;
+    color: #383bcf;
+    margin-left: 20px;
+
+    &:before {
+      content: "+";
+      display: inline-block;
+      padding: 5px 8px;
+      color: #fff;
+      background-image: linear-gradient(to right, #006aed, #3f35cb);
+      flex-shrink: 0;
+      border-radius: 50%;
+      margin-right: 12px;
+      transition: .3s;
+
+    }
+
+    &:hover {
+      &:before {
+        margin-right: 25px;
+      }
+    }
+  }
+
+  &__edit-skill-card {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background: svg-load("pencil.svg", fill=#ccc, width=100%, height=100%) center center no-repeat;
+    transition: all .3s;
+    outline:none;
+    border:none;
+
+    &:hover {
+      background: svg-load("pencil.svg", fill=#000, width=100%, height=100%) center center no-repeat;
+    }
+  }
+
+  &__remove-skill-card {
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    background: svg-load("remove.svg", fill=red, width=100%, height=100%) center center no-repeat;
+    transition: transform .3s;
+    outline:none;
+    border:none;
+
+    &:hover {
+      transform: scale(1.3);
+    }
+  }
+
+    &__remove-tag {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    background: svg-load("remove.svg", fill=#808080, width=100%, height=100%) center center no-repeat;
+    transition: transform .3s;
+    outline:none;
+    border:none;
+
+    &:hover {
+      transform: scale(1.3);
+    }
+  }
+
+  &__save-skill-card {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background: svg-load("tick.svg", fill=green, width=100%, height=100%) center center no-repeat;
+    margin-right: 20px;
+    transition: transform .3s;
+    outline:none;
+    border:none;
+
+    &:hover {
+      transform: scale(1.3);
+    }
+  }
+
+  &__edit-skill {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background: svg-load("pencil.svg", fill=#ccc, width=100%, height=100%) center center no-repeat;
+    margin-right: 20px;
+    transition: all .3s;
+    outline:none;
+    border:none;
+
+    &:hover {
+      background: svg-load("pencil.svg", fill=#000, width=100%, height=100%) center center no-repeat;
+    }
+  }
+
+  &__trash-skill {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background: svg-load("trash.svg", fill=#ccc, width=100%, height=100%) center center no-repeat;
+    transition: all .3s;
+    outline:none;
+    border:none;
+
+    &:hover {
+      background: svg-load("trash.svg", fill=#000, width=100%, height=100%) center center no-repeat;
+    }
+  }
+
+  &__save-skill {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background: svg-load("tick.svg", fill=green, width=100%, height=100%) center center no-repeat;
+    margin-right: 15px;
+    transition: transform .3s;
+    outline:none;
+    border:none;
+
+    &:hover {
+      transform: scale(1.3);
+    }
+  }
+
+  &__remove-skill {
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    background: svg-load("remove.svg", fill=red, width=100%, height=100%) center center no-repeat;
+    transition: transform .3s;
+    outline:none;
+    border:none;
+
+    &:hover {
+      transform: scale(1.3);
+    }
+  }
+
+  &__add-skill {
+    padding: 7px 15px;
+    background-image: linear-gradient(to right, #006aed, #3f35cb);
+    border-radius: 50%;
+    font-size: 30px;
+    font-weight: 600;
+    color: #fff;
+    flex-shrink:0;
+    transition: transform .3s;
+    outline:none;
+
+    &:hover {
+     background-image: linear-gradient(to right, #3f35cb, #006aed);
+    }
+  }
+
+  &__add-new {
+    color: #fff;
+    padding: 30px 0;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(to right, #006aed, #3f35cb);
+    transition:.3s;
+
+    &:hover {
+      background-image: linear-gradient(to right, #3f35cb, #006aed);
+    }
+  }
+
+  &__card-edit {
+    display: flex;
+    align-items: center;
+    outline:none;
+    border:none;
+    color:#808080;
+    font-weight: 600;
+    transition:.1s;
+
+    &:after {
+      content: "";
+      display: inline-block;
+      width: 20px;
+      height: 20px;
+      background: svg-load("pencil.svg", fill=blue, width=100%, height=100%) center center no-repeat;
+      margin-left: 12px;
+    }
+
+    &:hover {
+      color:#000;
+    }
+  }
+
+  &__card-remove {
+    display: flex;
+    align-items: center;
+    outline:none;
+    border:none;
+    color:#808080;
+    font-weight: 600;
+    transition:.1s;
+
+    &:after {
+      content: "";
+      display: inline-block;
+      width: 20px;
+      height: 20px;
+      background: svg-load("remove.svg", fill=#c92e2e, width=100%, height=100%) center center no-repeat;
+      margin-left: 12px;
+    }
+
+
+    &:hover {
+      color:#000;
+    }
+  }
+
+  &__upload-work-pic {
+    text-transform: uppercase;
+    padding: 15px 30px;
+    border-radius: 25px;
+    font-size: 16px;
+    font-weight: 700;
+    color: #fff;
+    background-image: linear-gradient(to right, #006aed, #3f35cb);
+    transition:.3s;
+
+    &:hover {
+      background-image: linear-gradient(to right, #3f35cb, #006aed);
+    }
+  }
+
+  &__cancel-edit {
+    color: #383bcf;
+    font-size: 16px;
+    font-weight: 700;
+    margin-right: 60px;
+    transition:.3s;
+    border:none;
+    outline:none;
+
+    &:hover {
+      color: #000;
+    }
+
+    @include phones {
+      margin-right: 10%;
+    }
+  }
+
+  &__save-edit {
+    color: #fff;
+    font-size: 16px;
+    font-weight: 700;
+    text-transform: uppercase;
+    padding: 10px 20px;
+    background-image: linear-gradient(to right, #006aed, #3f35cb);
+    border-radius: 30px;
+    transition: .3s;
+    border:none;
+    outline:none;
+
+    &:hover {
+      background-image: linear-gradient(to right, #3f35cb, #006aed);
+    }
+  }
+
+  &__upload-review-photo {
+    color: #383bcf;
+    font-size: 16px;
+    font-weight: 600;
+    transition: .3s;
+
+    &:hover {
+      color: #000;
+    }
+  }
+
+  &__close-login-window {
+    position: absolute;
+    right: 30px;
+    top: 30px;
+    display: inline-block;
+    width: 19px;
+    height: 19px;
+    background: svg-load(
+        "remove.svg",
+        fill=$text-color,
+        width=100%,
+        height=100%
+      )
+      center center no-repeat;
+
+    transition: transform .3s;
+    &:hover {
+      transform: scale(1.3);
+    }
+
+    @include phones {
+      right: 45px;
+    }
+  }
+
+  &__close-tooltip {
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    background: svg-load(
+        "remove.svg",
+        fill=#fff,
+        width=100%,
+        height=100%
+      )
+      center center no-repeat;
+  }
+}
+
+.button__add-icon {
+  display: inline-block;
+  width: 150px;
+  height: 150px;
+  border: solid 2px #ffffff;
+  border-radius: 50%;
+  position: relative;
+  margin-bottom: 20px;
+
+  &::before {
+    content: "+";
+    font-size: 72px;
+    font-weight: 300;
+    color: #fff;
+    line-height: 1;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+}
+
+.button__add-title {
+  font-size: 18px;
+  font-weight: bold;
+  display: block;
+}
+

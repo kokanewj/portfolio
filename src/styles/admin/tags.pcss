@@ -1,33 +1,30 @@
-.add-tags__wrapper {
-    margin-bottom: 20px;
-  }
-  
-.tags {
-    display: flex;
-    flex-wrap: wrap;
-  }
-  
-  .tags__remove {
-    width: 12px;
-    height: 12px;
-    background: svg-load('cross.svg', fill=$text-color) center center no-repeat / contain;
-    margin-left: 9px;
-  }
-  
-  .tags__item {
-    color: #283240;
-    margin-right: 8px;
-    margin-bottom: 8px;
-    border-radius: 50px;
-    background: #fff;
-    font-size: 15px;
-    padding: 6px 20px;
-
-  
-    &_new {
-      display: flex;
-      align-items: center;
-      background-color: #f4f4f4;
-      cursor:pointer;
-    }
-  }
+.tag {
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  font-weight: 600;
+  color: #697079;
+  border-radius: 15px;
+  background-color: #f4f4f4;
+  padding: 8px 12px;
+  margin-right: 10px;
+}
+.tag__name {
+  margin-right: 12px;
+}
+.tags__list {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.tags__item {
+  border-radius: 15px;
+  padding: 7px 15px;
+  background: #fff;
+  font-size: 14px;
+  font-weight: 600;
+  color: #697079;
+  margin-right: 10px;
+  margin-bottom: 5px;
+}

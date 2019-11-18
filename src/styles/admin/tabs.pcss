@@ -1,53 +1,53 @@
 .tabs-container {
-    background: #fff;
+  background: #fff;
+}
+
+.tabs {
+  display: flex;
+  height: 80px;
+
+  @include phones {
+    height: 86px;
   }
-  
-  .tabs {
-    display: flex;
-    height: 77px;
-  
-    @include phones {
-      height: 87px;
-    }
+}
+
+.tabs__item {
+  height: 100%;
+  margin-right: 32px;
+
+  @include phones {
+    margin-right: 5px;
   }
-  
-  .tabs__item {
-    height: 100%;
-    margin-right: 30px;
-  
-    @include phones {
-      margin-right: 3px;
-    }
-  
-    &:last-child {
-      margin-right: 0;
-    }
+
+  &:last-child {
+    margin-right: 0;
   }
-  
-  .tabs__link {
-    vertical-align: middle;
-    white-space: nowrap;
-    display: flex;
-    height: 100%;
-    align-items: center;
-    cursor: pointer;
-    width: 125px;
-    justify-content: center;
-    border-bottom: 3px solid transparent;
-    text-decoration: none;
-  
-    @include phones {
-      width: 100px;
-    }
-  
-    &:before {
-      content: attr(data-text);
-    }
-  
-    &:hover,
-    &.active {
-      color: #383bcf;
-      font-weight: 600;
-      border-color: currentColor;
-    }
+}
+
+.tabs__link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 125px;
+  border-bottom: 3px solid transparent;
+  vertical-align: middle;
+  white-space: nowrap;
+  text-decoration: none;
+  cursor: pointer;
+
+  @include phones {
+    width: 100px;
   }
+
+  &:before {
+    content: attr(data-text);
+  }
+
+  &:hover,
+  &.active {
+    color: #383bcf;
+    font-weight: 600;
+    border-color: #383bcf;
+  }
+}

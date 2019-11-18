@@ -51,14 +51,21 @@
     line-height: 1.8;
     font-weight: 700;
     opacity: .5;
-    margin-bottom: 18%;
   }
   
   &__skills {
     display: flex;
     justify-content: flex-end;
+    @include desktopHd {
+    justify-content: center;
+    margin-left: 40%;
+    }
+    @include desktop {
+    margin-left: 30%;
+    }
     @include tablets {
     justify-content: center;
+    margin-left: 0;
     }
   }
   

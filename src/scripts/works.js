@@ -1,10 +1,15 @@
 import Vue from "vue";
+import axios from "axios";
 
 const _tick = 5000;
+const _transition = 500;
 
 const thumbs = {
   template: "#slider-thumbs",
-  props: ["works","currentWork","currentIndex"],
+  props: {
+    works: Array,
+    currentIndex: Number
+  },
   computed: {
     translate() {
       const step = 100 / this.works.length;
@@ -16,8 +21,11 @@ const thumbs = {
 };
 
 const btns = {
-  template: "#slider-btns",
-  props: ["worksLength","currentWorkId"]
+  props: {
+    worksLength: Number,
+    currentWorkId: Number
+  },
+  template: "#slider-btns"
 };
 
 const display = {
@@ -27,8 +35,23 @@ const display = {
       show: true
     };
   },
-  components: { btns, thumbs },
-  props: ["works","currentWork","currentIndex"],
+  components: {
+    btns,
+    thumbs
+  },
+  props: {
+    works: Array,
+    currentWork: Object,
+    currentIndex: Number
+  },
+  watch: {
+    currentIndex() {
+      this.show = false;
+      setTimeout(() => {
+        this.show = true;
+      }, _transition);
+    }
+  },
   computed: {
     reversedWorks() {
       const works = [...this.works];
@@ -47,24 +70,33 @@ const display = {
 
 const tags = {
   template: "#slider-tags",
-  props: ["tagsArray"]
+  props: {
+    tagsArray: Array
+  }
 };
 
 const info = {
   template: "#slider-info",
-  components: { tags },
-  props: ["currentWork"],
+  components: {
+    tags
+  },
+  props: {
+    currentWork: Object
+  },
   computed: {
     tagsArray() {
-      return this.currentWork.skills.split(",");
+      return this.currentWork.techs.split(",");
     }
   }
 };
 
 new Vue({
-  el: "#slider-component",
   template: "#slider-container",
-  components: { display, info },
+  el: "#works-root",
+  components: {
+    display,
+    info
+  },
   data() {
     return {
       works: [],
@@ -79,7 +111,7 @@ new Vue({
   },
   watch: {
     currentIndex(value) {
-      this.updateCurIndex(value);
+      this.makeInfiniteLoopForCurIndex(value);
     }
   },
   methods: {
@@ -94,19 +126,18 @@ new Vue({
     },
     makeInfiniteLoopForCurIndex(value) {
       const worksAmount = this.works.length - 1;
-
       if (value > worksAmount) this.currentIndex = 0;
       if (value < 0) this.currentIndex = worksAmount;
     },
-    updateCurIndex(value) {
+    makeNoInfiniteSlider(value) {
       if (value === this.works.length) {
         this.currentIndex = this.works.length - 1;
       } else if (value <= 0) this.currentIndex = 0;
     },
-    makeArrWithRequiredImages(data) {
+    makeArrWithAbsoluteImages(data) {
       return data.map(item => {
-        const requiredPic = require(`../images/content/${item.photo}`);
-        item.photo = requiredPic;
+        const absolutePic = `https://webdev-api.loftschool.com/${item.photo}`;
+        item.photo = absolutePic;
 
         return item;
       });
@@ -137,8 +168,13 @@ new Vue({
     }
   },
   created() {
-    const data = require("../data/works.json");
-    this.works = this.makeArrWithRequiredImages(data);
+    axios
+      .get("https://webdev-api.loftschool.com/works/212")
+      .then(response => {
+        const data = response.data;
+        this.works = this.makeArrWithAbsoluteImages(data);
+      })
+      .catch(error => console.error(error.message));
   },
   mounted() {
     this.tick(_tick);

@@ -1,45 +1,102 @@
 .input {
-    display: block;
-    position: relative;
-    width: 100%;
+  display: block;
+  position: relative;
+  outline:none;
 
-    &_new {
-        .input__element {
-            padding: 15px 0 18px;
-        }
+  &.remove-paddings {
+    .input__element {
+      padding-right: 0;
+      outline:none;
+      padding-left: 0;
     }
+  }
+
+  &_labeled {
+    .input__element {
+      padding: 15px 0 19px;
+      outline:none;
+    }
+  }
+
+  &_iconed {
+    .input__title {
+      margin-left: 43px;
+      margin-bottom: 13px;
+      outline:none;
+    }
+    .input__element {
+      padding-left: 45px;
+      background: left center / auto 28px no-repeat;
+      font-size: 18px;
+      font-weight: bold;
+      padding-top: 17px;
+      padding-bottom: 17px;
+      outline:none;
+    }
+  }
+
+  &_icon {
+      &-user {
+        .input__element {
+          background-image: svg-load("user.svg", fill=#cfd2d7);
+        }
+      },
+      &-key {
+        .input__element {
+          background-image: svg-load("key.svg", fill=#cfd2d7);
+        }
+      }
+  }
+  &.error {
+      &.input_icon-user {
+        .input__element {
+          background-image: svg-load("user.svg", fill=red);
+        }
+      },
+      &.input_icon-user {
+        .input__element {
+          background-image: svg-load("key.svg", fill=red);
+        }
+      }
+  }
 }
 
-.textarea {
-    position: relative;
+
+.input__error-tooltip {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 30%;
+  transform: translateX(-50%);
+  z-index: 100;
+  outline:none;
+}
+
+.error {
+  .field__element {
+    border-color: red;
+  }
+
+  .input__error-tooltip {
+    display: block;
+  }
 }
 
 .input__title {
-    color: #404c62;
-    font-weight: 600;
-    opacity: 0.5;
-}
-
-.textarea__element {
-    height: 150px;
-    padding: 20px;
-    border: 1px solid rgba($text-color, 0.2);
-    resize: none;
-    font-weight: 600;
-    margin-top: 10px;
-    width: 100%;
-    outline:none;
+  color: #414c63;
+  font-weight: 600;
+  opacity: 0.5;
+  outline:none;
 }
 
 .input__element {
-    width: 100%;
-    padding: 10px 8%;
-    border: none;
-    border-bottom: 1px solid #1f232d;
-    outline:none;
+  width: 100%;
+  padding: 10px 8%;
+  border: none;
+  border-bottom: 1px solid #1f232d;
+  outline:none;
 
-    &::placeholder {
-        color: #ccc;
-        font-weight:600;
-    }
+  &::placeholder {
+    color: #373e42;
+  }
 }

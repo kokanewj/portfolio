@@ -1,72 +1,64 @@
-.header-container {
-    background: linear-gradient(to right, #3e3e59, #454573);
-    padding: 15px 0;
-  
-    @include phones {
-      padding: 20px 0;
-    }
-}
 
 .header {
-    color: #fff;
+  color: #fff;
+}
+
+.header__info {
+  display: flex;
+  align-items: center;
+}
+
+.header__title {
+  color: #fff;
+
+  @include phones {
+    display: none;
   }
-  
-  .header__information {
-    display: flex;
-    align-items: center;
-  }
-  
-  .header__title {
-    color: #fff;
-  
+}
+
+.header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.user {
+  display: flex;
+  align-items: center;
+  margin-right: 20px;
+}
+
+.user__name {
+  font-size: 18px;
+  font-weight: 600;
+
+  .exit-button {
+    display: none;
     @include phones {
-      display: none;
+      display: block;
     }
   }
-  
-  .header .container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+}
+
+.user__pic {
+  margin-right: 20px;
+  width: 45px;
+  height: 45px;
+  overflow: hidden;
+  flex-shrink: 0;
+  border-radius: 50%;
+}
+
+.exit-button {
+  opacity: 0.7;
+  text-decoration: none;
+  font-size: 14px;
+
+  &:hover {
+    text-decoration: underline;
   }
-  
-  .user {
-    display: flex;
-    align-items: center;
-    margin-right: 20px;
+
+  @include phones {
+    display: none;
   }
-  
-  .user__name {
-    font-size: 18px;
-    font-weight: 600;
-  
-    .exit {
-      display: none;
-      @include phones {
-        display: block;
-      }
-    }
-  }
-  
-  .user__photo {
-    margin-right: 20px;
-    width: 43px;
-    height: 43px;
-    overflow: hidden;
-    flex-shrink: 0;
-    border-radius: 50%;
-  }
-  
-  .exit {
-    opacity: 0.5;
-    text-decoration: none;
-    font-size: 14px;
-  
-    &:hover {
-      text-decoration: underline;
-    }
-  
-    @include phones {
-      display: none;
-    }
-  }
+}

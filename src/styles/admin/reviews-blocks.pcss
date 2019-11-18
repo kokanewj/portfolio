@@ -1,0 +1,14 @@
+.review-cards__list {
+  display: grid;
+  grid-template: "card card card" max-content / 1fr 1fr 1fr;
+  grid-gap: 32px;
+  @include tablets {
+    grid-template: "card card" max-content / 1fr 1fr;
+    grid-gap: 22px;
+  }
+}
+.review-cards__item {
+  background-color: #fff;
+  box-shadow: 4px 3px 20px 0 #ccc;
+  margin-left: 31px;
+}

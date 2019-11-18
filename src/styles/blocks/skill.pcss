@@ -1,76 +1,137 @@
-.skill {
+.skill__wrapper {
   position: relative;
-  width: 165px;
-  height: 165px;
-    @include tablets {
-    width: 135px;
-    height: 135px;
+  width: 150px;
+  height: 150px;
+}
+
+.skill__chart {
+  width: 100%;
+  height: 100%;
+}
+
+.skill__circle {
+  fill: transparent;
+
+  &--under {
+    stroke-width: 5px;
+    stroke: #eaeaea;
   }
 
-  &__circle {
-    fill: transparent;
-    &--position--under {
-      stroke: #ccc;
-      stroke-width: 5px;
-    }
-    &--position--above {
-      stroke-width: 10px;
-      stroke-dasharray: 170;
-      stroke-dashoffset: 100;
-    }
-  }
-
-  &__title {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    color: $text-color;
-    font-weight: 600;
-    transform: translate(-50%, -50%);
-    padding: 5px;
-    @include phones {
-    font-size: 16px;
-    }
+  &--above {
+    stroke-width: 10px;
+    stroke-dasharray: 251;
   }
 }
 
-.user-skills {
-  @include phones {
+.skill__title {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: inline-block;
   text-align: center;
-  }
+  font-size: 18px;
+  font-weight: bold;
+  color: rgba(65, 76, 99, 0.5);
 }
-.user-skills__item {
-  margin-bottom: 35px;
-  &:last-child{
-      margin-bottom: 0;
+
+.skills {
+  position: relative;
+}
+
+.skills__container {
+  width: 100%;
+  padding-top: 8%;
+
+  @include desktop {
+    margin: 0;
+  }
+
+  @include tablets {
+    margin: 0 auto;
+    width: 100%;
+  }
+
+  @include phones {
+    padding: 0;
+    width: 85%;
   }
 }
 
-.skills-row {
-  &__title {
-    font-size: 24px;
-    font-weight: 700;
-    margin-bottom: 25px;
-  }
-  
-  &__list {
-    display: flex;
-    flex-wrap: wrap;
-    @include tablets {
-    justify-content: center;
-  }
-  }
-  
-  &__item {
-  margin-right: 30px;
-  }
+.skills__top {
+  padding: 0 30%;
 
-  &__title {
-    @include tablets {
+  @include desktop {
+    padding: 0 20%;
+  }
+}
+
+.skills__title {
+  font-size: 30px;
+  margin-bottom: 5%;
+}
+
+.skills__content {
+  position: relative;
+  min-width: 320px;
+
+
+  @include desktop {
+    background-position-x: -200px;
+  }
+}
+
+.skills__content-charts {
+  @include tablets {
+    width: 100%;
+  }
+}
+
+.skills__bg-image-wrapper {
+  width: 50%;
+  height: 100%;
+}
+
+.skills__desc-block {
+  @include phones {
+    text-align: left;
+  }
+}
+
+.skills__desc {
+  color: rgba(65, 76, 99, 0.5);
+  font-weight: 600;
+  display: block;
+  line-height: 1.88;
+
+}
+
+.skills__stack-list {
+  padding-top: 5%;
+
+  @include phones {
+    padding-left: 15%;
+    padding-top: 15%;
+  }
+}
+
+.skills__stack-item {
+  margin-bottom: 5%;
+}
+
+.stack-row__title {
+  font-weight:700;
+  margin-bottom:30px;
+  @include tablets {
     text-align:center;
   }
+  @include phones {
+    text-align:initial;
+    margin-left:20px;
   }
 }
 
-
-
+.stack-row__list {
+  display:flex;
+  flex-wrap:wrap;
+}

@@ -28,17 +28,27 @@ export default {
         commit("ADD_SKILL", response.data);
         return response;
       } catch (error) {
-        // error handling
+        throw new Error(error.response.data.message);
       }
     },
 
-    async fetchSkills({ commit }, skill) {
+    async fetchSkills({ commit }) {
+      let getUserId, userId;
+
       try {
-        const response = await this.$axios.get("/skills/1", skill);
+        getUserId = await this.$axios.get("/user");
+        userId = getUserId.data.user.id;
+      } catch (error) {
+        throw new Error(error.response.data.message);
+      }
+
+      try {
+        const response = await this.$axios.get(`/skills/${userId}`);
+
         commit("SET_SKILLS", response.data);
         return response;
       } catch (error) {
-        // error handling
+        throw new Error(error.response.data.message);
       }
     },
 
@@ -55,20 +65,15 @@ export default {
     async editSkill({ commit }, skill) {
       try {
         const response = await this.$axios.post(`/skills/${skill.id}`, skill);
-        commit('EDIT_SKILL', response.data.skill);
+        commit("EDIT_SKILL", response.data.skill);
         return response;
-      } catch (error) {
-        // error handling
+      } catch ({
+        response: {
+          data: { message }
+        }
+      }) {
+        throw new Error(message);
       }
-    },
-
-    createReview(store, review) {
-      const formData = new FormData();
-
-      formData.append('text', review.desc);
-      formData.append('photo', review.photo);
-
-      this.$axios.post('/reviews', formData);
     }
   }
 };
